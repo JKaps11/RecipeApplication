@@ -6,7 +6,7 @@
 }
 
 .heading{
-    margin: 20px;
+    margin: 10px;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -15,6 +15,10 @@
 
 .heading h2{
     color: white;
+    text-align: center;
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
 }
 
 .heading #title{
@@ -30,11 +34,15 @@
 }
 
 .heading button{
-    padding: 20px 20px;
+    padding: 25px 25px;
+    border-radius: 30%;
+    border-width: 2px;
+    border-color: lightskyblue;
+    background-image: url('../assets/homebutton-V2.png');
 }
 
 .heading button:hover{
-    background-color: lightskyblue;
+    background-color: gray;
 }
 
 #menuoptions{

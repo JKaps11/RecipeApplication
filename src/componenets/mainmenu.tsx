@@ -9,10 +9,10 @@ const MainMenu = () => {
     return <div id='mainmenuformat'>
         <div className ='heading'>
             <div id='title'>
-                <h2>Welcome to Remedy Recipes</h2>
+                <h2>Recipe Navigator</h2>
             </div>
             <div id='hbutton'>
-                <button onClick={() => navigate('/')}>Home</button>
+                <button onClick={() => navigate('/')}/>
             </div>
         </div>
         <div id ='menuoptions'>
