@@ -1,9 +1,11 @@
 #homepage{
-    width: 100%;
+    margin: 10px;
+    width: 97%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: lightskyblue;
+    background-color: #333333;
+    border-radius: 25px;
 }
 
 .header{
@@ -12,24 +14,35 @@
 }
 
 .header #headerText{
-    width: 83%;
+    width: 80%;
 }
 
 .header h2{
     text-align: center;
+    width: 100%;
+    color: white;
 }
 
-.loginButton button{
-
+.header h6{
+    padding: 0 0;
+    margin: 0 0;
+    font-size: 13px;
+    font-family: "Helvetica Neue", sans-serif;
+    white-space:nowrap;
 }
-.header .loginButton{
-    width: 8.5%;
+.header button{
+    border-radius: 12px;
+    padding: 15px 30px;
+    color: white;
+    background-color: royalblue;
 }
 
-.signOutButton button{
+.header #loginButton{
 
+    align-self: center;
 }
 
-.header .signOutButton{
-    width: 8.5%;
+.header #signOutButton{
+
+    align-self: center;
 }

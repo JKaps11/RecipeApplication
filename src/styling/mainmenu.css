@@ -1,6 +1,8 @@
 #mainmenuformat{
+    margin: 10px;
     background-color: #333333;
     display: flex;
+    border-radius: 25px;
     flex-direction: column;
 
 }
@@ -48,3 +50,5 @@
 #menuoptions{
     align-self: center;
 }
+
+

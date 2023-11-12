@@ -11,11 +11,15 @@ const HomePage: React.FunctionComponent<HomePageProps> = props => {
             <div id='headerText'>
                 <h2>{pageTitle}</h2>
             </div>
-            <div className='loginButton'>
-                <button>Login</button>
+            <div id='loginButton'>
+                <button>
+                    <h6>Login</h6>
+                </button>
             </div>
-            <div className='signOutButton'>
-                <button>Sign Out</button>
+            <div id='signOutButton'>
+                <button>
+                    <h6>Sign Out</h6>
+                </button>
             </div>
         </div>
         <div id='body'>
