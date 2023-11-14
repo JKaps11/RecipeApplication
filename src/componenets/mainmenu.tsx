@@ -16,7 +16,17 @@ const MainMenu = () => {
             </div>
         </div>
         <div id ='menuoptions'>
-            <MainMenuOption name='Recipes' path = '/recipes'/>
+            <div id='recipeOptions'>
+                <h3 id="recipeOptionsText">Recipe Options</h3>
+            </div>
+            <div id='createRecipe'>
+                <MainMenuOption name='Create Recipes' path = '/createrecipes'/>
+            </div>
+
+            <div id='viewRecipes'>
+                <MainMenuOption name='View Recipes' path = '/viewrecipes'/>
+            </div>
+
         </div>
 
     </div>;

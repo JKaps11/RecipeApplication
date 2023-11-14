@@ -1,6 +1,6 @@
 import React from  'react';
 import {useNavigate} from "react-router-dom";
-import "../styling/mainmenu.css";
+import "../styling/mainmenuoptions.css";
 interface MainMenuOptionProps{
     name: string;
     path: string;
@@ -8,8 +8,8 @@ interface MainMenuOptionProps{
 const MainMenuOption = ({name, path}: MainMenuOptionProps) => {
     const navigate = useNavigate();
 
-    return <button onClick={() => navigate(path)}>
-            {name}
+    return <button id="mmobutton" onClick={() => navigate(path)}>
+        <span id="mmospan"> {name}</span>
         </button>;
 };
 export default MainMenuOption;

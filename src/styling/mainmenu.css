@@ -1,26 +1,27 @@
 #mainmenuformat{
     margin: 10px;
-    background-color: #333333;
     display: flex;
-    border-radius: 25px;
     flex-direction: column;
+    height: 100vh;
 
 }
 
 .heading{
-    margin: 10px;
+    background-color: #333333;
+    border-radius: 25px;
     display: flex;
     flex-direction: row;
     width: 100%;
     align-content: space-between;
+    height: 10%;
+    border: 2px solid black;
 }
 
 .heading h2{
     color: white;
     text-align: center;
     font-family: "Trebuchet MS", sans-serif;
-    font-weight: lighter;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .heading #title{
@@ -39,7 +40,7 @@
     padding: 25px 25px;
     border-radius: 30%;
     border-width: 2px;
-    border-color: lightskyblue;
+    border-color: royalblue;
     background-image: url('../assets/homebutton-V2.png');
 }
 
@@ -48,7 +49,36 @@
 }
 
 #menuoptions{
-    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #333333;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    border: 2px solid black;
 }
 
+#recipeOptions{
+    margin-top: 25px;
+    margin-bottom: 45px;
+    font-size: 20px;
+    font-family: "Trebuchet MS",sans-serif;
+}
+
+#recipeOptionsText{
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+#createRecipe{
+
+}
+
+#viewRecipe{
+
+}
 

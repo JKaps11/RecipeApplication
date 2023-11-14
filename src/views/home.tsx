@@ -1,5 +1,7 @@
 import React from  'react';
+import TextBubble from '../componenets/textbubble'
 import "../styling/home.css";
+import Textbubble from "../componenets/textbubble";
 
 
 export interface  HomePageProps{};
@@ -12,18 +14,20 @@ const HomePage: React.FunctionComponent<HomePageProps> = props => {
                 <h2>{pageTitle}</h2>
             </div>
             <div id='loginButton'>
-                <button>
-                    <h6>Login</h6>
+                <button className="authbutton">
+                    <span className="homespan">Login</span>
                 </button>
             </div>
             <div id='signOutButton'>
-                <button>
-                    <h6>Sign Out</h6>
+                <button className="authbutton">
+                    <span className="homespan">Sign Out</span>
                 </button>
             </div>
         </div>
-        <div id='body'>
-
+        <div className='body'>
+            <TextBubble>
+                <p>Start Creating Recipes Now!</p>
+            </TextBubble>
         </div>
     </div>;
 };

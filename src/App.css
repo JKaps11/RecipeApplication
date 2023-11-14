@@ -9,8 +9,10 @@
 
 #mainmenu{
     width: 20%;
+    height: 100%;
 }
 
 #router{
+    height: 100%;
     width: 80%
 }
