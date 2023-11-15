@@ -1,8 +1,12 @@
-import React from  'react';
 import MainMenuOption from "./mainmenuoptions";
 import "../styling/mainmenu.css"
 import {useNavigate} from "react-router-dom";
-const MainMenu = () => {
+
+interface MainMenuProps{
+    viewRecipeClick: () => void;
+    createRecipeClick: () => void;
+}
+const MainMenu = ({viewRecipeClick, createRecipeClick}:MainMenuProps) => {
 
     const navigate = useNavigate();
 
@@ -20,13 +24,12 @@ const MainMenu = () => {
                 <h3 id="recipeOptionsText">Recipe Options</h3>
             </div>
             <div id='createRecipe'>
-                <MainMenuOption name='Create Recipes' path = '/createrecipes'/>
+                <MainMenuOption name='Create Recipes' onButtonClick={createRecipeClick}/>
             </div>
 
             <div id='viewRecipes'>
-                <MainMenuOption name='View Recipes' path = '/viewrecipes'/>
+                <MainMenuOption name='View Recipes' onButtonClick={viewRecipeClick}/>
             </div>
-
         </div>
 
     </div>;

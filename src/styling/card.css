@@ -1,0 +1,74 @@
+#cardbutton {
+    padding: 0;
+    margin: 0;
+    height: 350px;
+    width: 250px;
+    border-radius: 25px;
+    border: 2px black;
+    max-height: 350px;
+    max-width: 250px;
+}
+
+#cardLayout {
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 250px;
+    max-height: 100%;
+    max-width: 250px;
+}
+
+#cardtype{
+    -moz-border-radius-topright: inherit;
+    -moz-border-radius-topleft: inherit;
+    height: 10%;
+    width: 250px;
+}
+
+#cardtypetext{
+    color:white;
+
+}
+
+#cardimg {
+    max-width: 250px;
+    width: 250px;
+    height: 30%;
+    max-height: 30%;
+}
+
+#cardimg img {
+    width: 250px;
+    height: 100%;
+    object-fit: cover;
+    max-width: 250px; /* Ensure image does not exceed its container's width */
+    max-height: 100%; /* Ensure image does not exceed its container's height */
+}
+
+
+
+#cardtitle {
+    width: 100%;
+    height: 10%;
+}
+
+#cardh3 {
+    font-size: 20px;
+    max-width: 250px;
+    text-align: center;
+    color: black;
+}
+
+#carddesc {
+    width: 250px;
+    height: 50%;
+    max-width: 250px;
+}
+
+#cardp {
+    color: black;
+    width: 250px;
+    height: 50%;
+    max-width: 250px;
+}

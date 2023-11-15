@@ -1,14 +1,26 @@
-import React from  'react';
+import React, {useState} from 'react';
 import TextBubble from '../componenets/textbubble'
 import "../styling/home.css";
-import Textbubble from "../componenets/textbubble";
+import CulinarySelector from "../componenets/culinaryselector";
+import MainMenu from "../componenets/mainmenu";
 
+const HomePage = () => {
 
-export interface  HomePageProps{};
+    const viewRecipeClick = () => {
 
-const HomePage: React.FunctionComponent<HomePageProps> = props => {
+    };
+
+    const createRecipeClick = () => {
+        setShowComponent(true);
+    };
+    const [showComponent, setShowComponent] = useState<boolean>(false);
+
     let pageTitle = "Welcome to Remedy Recipes"
-    return <div id='homepage'>
+    return<div id="homeLayout">
+        <div id="mainmenuLayout">
+            <MainMenu createRecipeClick={createRecipeClick} viewRecipeClick={viewRecipeClick}/>
+        </div>
+        <div id='homepage'>
         <div className='header'>
             <div id='headerText'>
                 <h2>{pageTitle}</h2>
@@ -26,9 +38,14 @@ const HomePage: React.FunctionComponent<HomePageProps> = props => {
         </div>
         <div className='body'>
             <TextBubble>
-                <p>Start Creating Recipes Now!</p>
+                <h4>Start Creating Recipes Now!</h4>
+                <p>
+                    Get started by pressing the "create recipes" button in the the recipe navigation menu.
+                </p>
             </TextBubble>
         </div>
+            {showComponent && <CulinarySelector/>}
+    </div>
     </div>;
 };
 

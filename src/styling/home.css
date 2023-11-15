@@ -1,11 +1,24 @@
 html, body{
     margin: 0;
-    height: 100%;
+    height: 100vh;
+    width: 100%;
+}
+
+#homeLayout{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+
+#mainmenuLayout{
+    width: 20%;
+    height: 100vh;
 }
 
 #homepage{
     margin: 10px;
-    width: 97%;
+    width: 80%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -13,15 +26,15 @@ html, body{
 }
 
 .header{
+    position: fixed;
     display: flex;
     flex-direction: row;
     background-color: #333333;
     border-radius: 25px;
-    height: 10%;
     border: 2px solid black;
     justify-content: center;
     padding: 0;
-    margin: 0;
+    width: 78%;
 }
 
 .header #headerText{
@@ -55,6 +68,7 @@ html, body{
     color: white;
     background-color: #151B54;
     margin-right: 10px;
+    white-space: nowrap;
 }
 
 .header .authbutton:active .homespan{
@@ -76,8 +90,14 @@ header .authbutton:hover .homespan{
 }
 
 .body{
+    margin-top: 80px;
     height: 100vh;
     display: flex;
     justify-content: center;
 
+}
+#mainmenu{
+    width: 20%;
+    height: 100%;
+    position: fixed;
 }

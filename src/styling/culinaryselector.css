@@ -1,0 +1,29 @@
+#csLayout {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    width: fit-content;
+}
+
+#cshead{
+    height: 50px;
+}
+#cscards {
+    height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#csfrench,
+#csitalian,
+#csindian,
+#csjapan,
+#csamerican {
+    margin: 10px; /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+#csparagraph {
+    height: 50px;
+}
