@@ -1,4 +1,10 @@
-#mmobutton{
+#welcomelayout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#welcomebutton{
     border-radius: 25px;
     padding: 0;
     border: none;
@@ -8,20 +14,28 @@
     margin-bottom: 15px;
 }
 
-#mmobutton:active #mmospan{
+#welcomebutton:active #welcomespan{
     transform: translateY(-2px)
 }
 
-#mmobutton:hover #mmospan{
+#welcomebutton:hover #welcomespan{
     transform: translateY(-7px);
 }
-#mmospan{
+#welcomespan{
     display: block;
-    padding: 15px 42px;
+    padding: 30px 60px;
     border-radius: 25px;
     transform: translateY(-6px);
     text-align: center;
     color: white;
+    font-size: 20px;
     font-weight: bold;
     background-color: hsl(219, 79%, 66%);
+}
+
+#welcometitle{
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 60px;
 }

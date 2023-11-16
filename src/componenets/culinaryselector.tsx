@@ -5,9 +5,6 @@ import "../styling/culinaryselector.css"
 const CulinarySelector = () => {
     return <TextBubble>
         <div id="csLayout">
-            <div id="cshead">
-                <h4>Choose your Culinary Type</h4>
-            </div>
             <div id="cscards">
                 <div id="csfrench">
                     <Card cuisineType="Cuisine" imgPath={require('../assets/image/crepe.jpg')} name="French"

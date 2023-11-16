@@ -5,10 +5,9 @@ import {useNavigate} from "react-router-dom";
 interface MainMenuProps{
     viewRecipeClick: () => void;
     createRecipeClick: () => void;
+    homeButtonFunction: () => void;
 }
-const MainMenu = ({viewRecipeClick, createRecipeClick}:MainMenuProps) => {
-
-    const navigate = useNavigate();
+const MainMenu = ({viewRecipeClick, createRecipeClick, homeButtonFunction}:MainMenuProps) => {
 
     return <div id='mainmenuformat'>
         <div className ='heading'>
@@ -16,7 +15,7 @@ const MainMenu = ({viewRecipeClick, createRecipeClick}:MainMenuProps) => {
                 <h2>Recipe Navigator</h2>
             </div>
             <div id='hbutton'>
-                <button onClick={() => navigate('/')}/>
+                <button onClick={homeButtonFunction}/>
             </div>
         </div>
         <div id ='menuoptions'>
