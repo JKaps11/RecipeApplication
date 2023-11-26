@@ -17,15 +17,29 @@ const HomePage = () => {
 
     };
 
+    const menuRecipeClick =() => {
+
+    };
+
+    const menuLayoutClick =() => {
+
+    };
+
     const createRecipeClick = () => {
         setShowComponent("CulinarySelector");
         setPageTitle("Select a Culinary Type")
     };
     const [showComponent, setShowComponent] = useState<string>('');
-    const [pageTitle, setPageTitle] = useState<string>("Welcome to Remedy Recipes")
+    const [pageTitle, setPageTitle] = useState<string>("Welcome to Menu Editor")
     return<div id="homeLayout">
         <div id="mainmenuLayout">
-            <MainMenu createRecipeClick={createRecipeClick} viewRecipeClick={viewRecipeClick} homeButtonFunction={homeButtonFunction}/>
+            <MainMenu
+                createRecipeClick={createRecipeClick}
+                viewRecipeClick={viewRecipeClick}
+                menuRecipeClick={menuRecipeClick}
+                menuLayoutClick={menuLayoutClick}
+                homeButtonFunction={homeButtonFunction}
+            />
         </div>
         <div id='homepage'>
         <div className='header'>

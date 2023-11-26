@@ -1,0 +1,89 @@
+#cmenulayout{
+    height: 100%;
+    width:60px;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#homeButton{
+    margin-top: 20px;
+    padding: 25px 25px;
+    border-radius: 30%;
+    border-width: 2px;
+    border-color: white;
+    background-image: url('../assets/homebutton-V2.png');
+}
+
+#homeButton:hover{
+    background-color: gray;
+}
+
+#vrecipeButton{
+    margin-top: 10px;
+    padding: 25px 25px;
+    border-radius: 30%;
+    border-width: 2px;
+    border-color: white;
+    background-image: url('../assets/vrecipebutton.png');
+}
+
+#vrecipeButton:hover{
+    background-color: gray;
+}
+
+#crecipeButton{
+    margin-top: 10px;
+    padding: 25px 25px;
+    border-radius: 30%;
+    border-width: 2px;
+    border-color: white;
+    background-image: url('../assets/crecipebutton.png');
+}
+
+#crecipeButton:hover{
+    background-color: gray;
+}
+
+
+#mrecipeButton{
+    margin-top: 10px;
+    padding: 25px 25px;
+    border-radius: 30%;
+    border-width: 2px;
+    border-color: white;
+    background-image: url('../assets/mrecipebutton.png');
+}
+
+#mrecipeButton:hover{
+    background-color: gray;
+}
+
+#mlayoutButton{
+    margin-top: 10px;
+    padding: 25px 25px;
+    border-radius: 30%;
+    border-width: 2px;
+    border-color: white;
+    background-image: url('../assets/mlayoutbutton.png');
+}
+
+#mlayoutButton:hover{
+    background-color: gray;
+}
+
+
+
+#collapseButton{
+    margin-top: 10px;
+    padding: 25px 25px;
+    border-radius: 30%;
+    border-width: 2px;
+    border-color: white;
+    background-image: url('../assets/collapsebutton.png');
+}
+
+#collapseButton:hover{
+    background-color: gray;
+}
