@@ -1,4 +1,1 @@
-Supposed to be a fully working menu editor/recipe storer for a restraunt
-
-Need to figure out what to implement back end with
-
+Working on creating a recipe/menu creator. Front end with react, login authentication and authorization with auth0, backend with aws.
