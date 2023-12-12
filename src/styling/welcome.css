@@ -5,16 +5,19 @@
 }
 
 #welcomebutton{
+    margin-top: 300px;
     border-radius: 25px;
     padding: 0;
-    border: none;
     cursor: pointer;
     outline-offset: 4px;
+    border: none;
+    color: white;
     background-color: #151B54;
-    margin-bottom: 15px;
+    margin-right: 10px;
+    white-space: nowrap;
 }
 
-#welcomebutton:active #welcomespan{
+#welcomebutton:active {
     transform: translateY(-2px)
 }
 
@@ -22,15 +25,15 @@
     transform: translateY(-7px);
 }
 #welcomespan{
-    display: block;
-    padding: 30px 60px;
-    border-radius: 25px;
     transform: translateY(-6px);
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
     background-color: hsl(219, 79%, 66%);
+    padding: 50px 100px;
+    display: block;
+    font-size: 40px;
+    border-radius: 25px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    text-align: center;
 }
 
 #welcometitle{

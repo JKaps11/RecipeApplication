@@ -1,0 +1,32 @@
+#loginspan{
+    transform: translateY(-6px);
+    background-color: hsl(219, 79%, 66%);
+    padding: 50px 100px;
+    display: block;
+    font-size: 40px;
+    border-radius: 25px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+#loginbutton{
+    margin-top: 300px;
+    border-radius: 25px;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    border: none;
+    color: white;
+    background-color: #151B54;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+#loginbutton:active{
+    transform: translateY(-2px)
+}
+
+#loginbutton:hover #loginspan{
+    transform: translateY(-7px);
+}

@@ -2,7 +2,6 @@ import MainMenuOption from "./mainmenuoptions";
 import CollapsedMenu from "./collapsedmenu";
 import "../styling/mainmenu.css"
 import {useState} from "react";
-import collapsedmenu from "./collapsedmenu";
 
 interface MainMenuProps{
     viewRecipeClick: () => void;

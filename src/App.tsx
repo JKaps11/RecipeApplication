@@ -4,7 +4,6 @@ import HomePage from "./views/home";
 import AboutPage from "./views/aboutpage";
 import React from 'react';
 import WelcomePage from "./views/welcome";
-import CulinarySelector from "./componenets/culinaryselector";
 
 
 function App() {

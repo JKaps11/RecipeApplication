@@ -35,10 +35,17 @@ html, body{
     justify-content: center;
     padding: 0;
     width: 100%;
+    height: fit-content;
 }
 
 .header #headerText{
-    width: 80%;
+    width: 100%;
+    height:100%;
+}
+
+.header #signOutButton{
+    align-self: center;
+    justify-self: center;
 }
 
 .header h2{
@@ -47,47 +54,6 @@ html, body{
     color: white;
 }
 
-.header .homespan{
-    transform: translateY(-6px);
-    background-color: hsl(219, 79%, 66%);
-    padding: 15px 20px;
-    display: block;
-    font-size: 13px;
-    border-radius: 25px;
-    font-family: "Helvetica Neue", sans-serif;
-    font-weight: bold;
-    text-align: center;
-}
-.header .authbutton{
-    margin-top: 10px;
-    border-radius: 25px;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
-    border: none;
-    color: white;
-    background-color: #151B54;
-    margin-right: 10px;
-    white-space: nowrap;
-}
-
-.header .authbutton:active .homespan{
-    transform: translateY(-2px)
-}
-
-.header .authbutton:hover .homespan{
-    transform: translateY(-7px);
-}
-
-.header #loginButton{
-    align-self: center;
-}
-
-
-.header #signOutButton{
-
-    align-self: center;
-}
 
 .body{
     margin-top: 20px;

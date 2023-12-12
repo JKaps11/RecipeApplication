@@ -41,7 +41,7 @@
     border-radius: 30%;
     border-width: 2px;
     border-color: royalblue;
-    background-image: url('../assets/homebutton-V2.png');
+    background-image: url('../assets/collapsedmenuimages/homebutton-V2.png');
 }
 
 .heading button:hover{
