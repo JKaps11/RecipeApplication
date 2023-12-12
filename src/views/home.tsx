@@ -8,7 +8,7 @@ import {useAuth0} from "@auth0/auth0-react";
 
 const HomePage = () => {
 
-    const {isAuthenticated} = useAuth0();
+    const {user, isAuthenticated} = useAuth0();
     const homeButtonFunction = () => {
         navigate("/home");
         setShowComponent("");
@@ -34,7 +34,9 @@ const HomePage = () => {
     };
     const [showComponent, setShowComponent] = useState<string>('');
     const [pageTitle, setPageTitle] = useState<string>("Welcome to Menu Editor")
-    return isAuthenticated ? (<div id="homeLayout">
+
+
+    return isAuthenticated ? <div id="homeLayout">
         <div id="mainmenuLayout">
             <MainMenu
                 createRecipeClick={createRecipeClick}
@@ -49,8 +51,13 @@ const HomePage = () => {
             <div id='headerText'>
                 <h2>{pageTitle}</h2>
             </div>
-            <div id='signOutButton'>
+            <div id='headerbuttons'>
                 <LogoutButton/>
+            </div>
+            <div id="headerbuttons">
+                <button style={{backgroundImage:user?.picture}} onClick={() => navigate("/profile")}>
+
+                </button>
             </div>
         </div>
         <div className='body'>
@@ -58,7 +65,7 @@ const HomePage = () => {
         </div>
 
     </div>
-    </div>):<h2>
+    </div>:<h2>
         You need to log in first
     </h2>;
 };

@@ -4,6 +4,7 @@ import HomePage from "./views/home";
 import AboutPage from "./views/aboutpage";
 import React from 'react';
 import WelcomePage from "./views/welcome";
+import AccountPage from "./views/accountpage";
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
           <Routes>
               <Route path='/' element={<WelcomePage/>}/>
               <Route path='/home' element={<HomePage/>}/>
-              <Route path='about' element={<AboutPage/>}/>
+              <Route path='/about' element={<AboutPage/>}/>
+              <Route path='/profile' element={<AccountPage/>}/>
           </Routes>
       </BrowserRouter>
   </div>;
