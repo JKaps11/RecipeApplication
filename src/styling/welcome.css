@@ -1,6 +1,14 @@
 
 
 #lpcontent{
-    height: 60%;
+    align-items: center;
     width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+#welcomeTitle{
+    color: #52B2Bf;
+    margin-bottom: 50px;
 }

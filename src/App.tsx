@@ -11,22 +11,23 @@ import Navbar from "./componenets/navbar";
 
 function App() {
   return <div id='appformat'>
-        <div id="welcomelayout">
+        <div id="applayout">
             <BrowserRouter>
             <div id="header">
-                <h1 id="welcomeTitle">Remedy Recipes</h1>
+                <h1 id="appTitle">Remedy Recipes</h1>
             </div>
             <div id="navbar">
                 <Navbar/>
             </div>
-
-            <Routes>
-                <Route path='/' element={<WelcomePage/>}/>
-                <Route path='/home' element={<HomePage/>}/>
-                <Route path='/features' element={<FeaturesPage/>}/>
-                 <Route path='/about' element={<AboutPage/>}/>
-                 <Route path='/profile' element={<AccountPage/>}/>
-            </Routes>
+            <div id="routes">
+                <Routes>
+                    <Route path='/' element={<WelcomePage/>}/>
+                    <Route path='/home' element={<HomePage/>}/>
+                    <Route path='/features' element={<FeaturesPage/>}/>
+                    <Route path='/about' element={<AboutPage/>}/>
+                    <Route path='/profile' element={<AccountPage/>}/>
+                </Routes>
+            </div>
         </BrowserRouter>
         </div>
   </div>;
