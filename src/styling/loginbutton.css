@@ -1,32 +1,26 @@
-#loginspan{
-    transform: translateY(-6px);
-    background-color: hsl(219, 79%, 66%);
-    padding: 50px 100px;
-    display: block;
-    font-size: 40px;
-    border-radius: 25px;
-    font-family: "Helvetica Neue", sans-serif;
-    font-weight: bold;
-    text-align: center;
-}
+
 
 #loginbutton{
-    margin-top: 300px;
-    border-radius: 25px;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
-    border: none;
+    margin-top: 40%;
+    padding: 10px 30px;
+
     color: white;
-    background-color: #151B54;
-    margin-right: 10px;
-    white-space: nowrap;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #80461B;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: normal ;
+    border-width: 4px;
+    font-size: 20px;
+    border-style: solid;
+    border-color: #80461B;
+
 }
 
 #loginbutton:active{
-    transform: translateY(-2px)
+    background-color: #bd9881;
 }
 
-#loginbutton:hover #loginspan{
-    transform: translateY(-7px);
+#loginbutton:hover{
+    background-color: #bd9881;
 }
