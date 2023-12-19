@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN || '';
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID || '';
-const redirectUri = "http://localhost:3000/home";
+const redirectUri = "http://localhost:3000/";
 
 const auth0ProviderOptions = {
     domain,

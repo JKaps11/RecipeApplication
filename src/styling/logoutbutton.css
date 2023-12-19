@@ -1,32 +1,17 @@
-#logoutspan{
-    transform: translateY(-6px);
-    background-color: hsl(219, 79%, 66%);
-    padding: 15px 20px;
-    display: block;
-    font-size: 13px;
-    border-radius: 25px;
-    font-family: "Helvetica Neue", sans-serif;
-    font-weight: bold;
-    text-align: center;
-}
-
 #logoutbutton{
-    margin-top: 10px;
+    margin-left: 69%;
     border-radius: 25px;
-    padding: 0;
+    padding: 0 20px;
     cursor: pointer;
-    outline-offset: 4px;
     border: none;
     color: white;
-    background-color: #151B54;
-    margin-right: 10px;
-    white-space: nowrap;
+    background-color: #52B2Bf;
 }
 
-#logoutbutton:active #logoutspan{
-    transform: translateY(-2px)
+#logoutbutton:active{
+ background-color: #48AAAD;
 }
 
-#logoutbutton:hover #logoutspan{
-    transform: translateY(-7px);
+#logoutbutton:hover{
+    background-color: #48AAAD ;
 }

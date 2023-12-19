@@ -1,7 +1,7 @@
 #csLayout {
     display: flex;
     flex-direction: column;
-    height: 1000px;
+    height: fit-content;
     width: fit-content;
 }
 
@@ -9,7 +9,7 @@
     height: 50px;
 }
 #cscards {
-    height: 900px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

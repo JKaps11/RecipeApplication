@@ -5,11 +5,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 const LogoutButton = (): JSX.Element | null => {
     const { logout, isAuthenticated } = useAuth0();
 
-    return !isAuthenticated ? (
+    return isAuthenticated ? (
         <button id ="logoutbutton" onClick={() => logout()}>
-            <span id="logoutspan">
-                Sign Out
-            </span>
+            Sign Out
         </button>
     ) : null;
 }

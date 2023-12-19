@@ -35,8 +35,8 @@ const HomePage = () => {
     const [showComponent, setShowComponent] = useState<string>('');
     const [pageTitle, setPageTitle] = useState<string>("Welcome to Menu Editor")
 
-
-    return isAuthenticated ? <div id="homeLayout">
+    console.log(isAuthenticated);
+    return isAuthenticated ? (<div id="homeLayout">
         <div id="mainmenuLayout">
             <MainMenu
                 createRecipeClick={createRecipeClick}
@@ -51,23 +51,16 @@ const HomePage = () => {
             <div id='headerText'>
                 <h2>{pageTitle}</h2>
             </div>
-            <div id='headerbuttons'>
-                <LogoutButton/>
-            </div>
-            <div id="headerbuttons">
-                <button style={{backgroundImage:user?.picture}} onClick={() => navigate("/profile")}>
 
-                </button>
-            </div>
         </div>
         <div className='body'>
             <HomeConditionalRender option={showComponent}/>
         </div>
 
     </div>
-    </div>:<h2>
+    </div>):(<h2>
         You need to log in first
-    </h2>;
+    </h2>);
 };
 
 export default  HomePage;

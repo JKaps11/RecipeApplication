@@ -24,3 +24,20 @@
     background-color: #48AAAD;
     color: white;
 }
+
+#profpic{
+    background-size: cover;
+    padding: 10px 22px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: #52B2Bf;
+    border-style: solid;
+}
+
+#profpic:active{
+    background-color: gray;
+}
+
+#profpic:hover{
+    background-color: gray;
+}
