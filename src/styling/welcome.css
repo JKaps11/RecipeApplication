@@ -1,26 +1,4 @@
-#welcomelayout{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
 
-#header{
-    width: 100%;
-    height: 35%;
-    background-image: url("../assets/banner.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#welcomeTitle{
-    color: black;
-    text-align: center;
-}
-
-#navbar{
-    width: 100%;
-    height: 5%;
-}
 
 #lpcontent{
     height: 60%;
