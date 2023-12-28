@@ -1,1 +1,9 @@
-Working on creating a recipe/menu creator. Front end with react, login authentication and authorization with auth0, backend with aws.
+Working on creating a recipe/menu creator.
+
+Using the MERN Stack
+   - MongoDB
+   - Express.js
+   - React.js
+   - Node.js
+
+login authentication and authorization with auth0
