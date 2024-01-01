@@ -1,41 +1,14 @@
-#welcomelayout{
-    display: flex;
-    flex-direction: column;
+
+
+#lpcontent{
     align-items: center;
-}
-
-#welcomebutton{
-    border-radius: 25px;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    outline-offset: 4px;
-    background-color: #151B54;
-    margin-bottom: 15px;
-}
-
-#welcomebutton:active #welcomespan{
-    transform: translateY(-2px)
-}
-
-#welcomebutton:hover #welcomespan{
-    transform: translateY(-7px);
-}
-#welcomespan{
-    display: block;
-    padding: 30px 60px;
-    border-radius: 25px;
-    transform: translateY(-6px);
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: hsl(219, 79%, 66%);
-}
-
-#welcometitle{
-    text-align: center;
     width: 100%;
-    color: white;
-    font-size: 60px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+#welcomeTitle{
+    color: #333333;
+    margin-bottom: 50px;
 }

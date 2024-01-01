@@ -1,7 +1,10 @@
 #cmenulayout{
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
     height: 100%;
     width:60px;
-    background-color: #333333;
+    background-color: var(--main-block-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +16,7 @@
     border-radius: 30%;
     border-width: 2px;
     border-color: white;
-    background-image: url('../assets/homebutton-V2.png');
+    background-image: url('../assets/collapsedmenuimages/homebutton-V2.png');
 }
 
 #homeButton:hover{
@@ -26,7 +29,7 @@
     border-radius: 30%;
     border-width: 2px;
     border-color: white;
-    background-image: url('../assets/vrecipebutton.png');
+    background-image: url('../assets/collapsedmenuimages/vrecipebutton.png');
 }
 
 #vrecipeButton:hover{
@@ -39,7 +42,7 @@
     border-radius: 30%;
     border-width: 2px;
     border-color: white;
-    background-image: url('../assets/crecipebutton.png');
+    background-image: url('../assets/collapsedmenuimages/crecipebutton.png');
 }
 
 #crecipeButton:hover{
@@ -53,7 +56,7 @@
     border-radius: 30%;
     border-width: 2px;
     border-color: white;
-    background-image: url('../assets/mrecipebutton.png');
+    background-image: url('../assets/collapsedmenuimages/mrecipebutton.png');
 }
 
 #mrecipeButton:hover{
@@ -66,7 +69,7 @@
     border-radius: 30%;
     border-width: 2px;
     border-color: white;
-    background-image: url('../assets/mlayoutbutton.png');
+    background-image: url('../assets/collapsedmenuimages/mlayoutbutton.png');
 }
 
 #mlayoutButton:hover{
@@ -81,7 +84,7 @@
     border-radius: 30%;
     border-width: 2px;
     border-color: white;
-    background-image: url('../assets/collapsebutton.png');
+    background-image: url('../assets/collapsedmenuimages/collapsebutton.png');
 }
 
 #collapseButton:hover{

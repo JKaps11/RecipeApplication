@@ -2,7 +2,6 @@ import MainMenuOption from "./mainmenuoptions";
 import CollapsedMenu from "./collapsedmenu";
 import "../styling/mainmenu.css"
 import {useState} from "react";
-import collapsedmenu from "./collapsedmenu";
 
 interface MainMenuProps{
     viewRecipeClick: () => void;
@@ -21,12 +20,7 @@ const MainMenu = ({viewRecipeClick, createRecipeClick, menuRecipeClick, menuLayo
     if(showMenu) {
         return <div id='mainmenuformat'>
             <div className='heading'>
-                <div id='title'>
-                    <h2>Editor Menu</h2>
-                </div>
-                <div id='hbutton'>
-                    <button onClick={homeButtonFunction}/>
-                </div>
+                 <h2>Editor Menu</h2>
             </div>
             <div id='menuoptions'>
                 <div id='recipeOptions'>

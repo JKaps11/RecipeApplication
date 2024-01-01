@@ -3,9 +3,11 @@ import "../styling/home.css";
 import MainMenu from "../componenets/mainmenu";
 import HomeConditionalRender from "../componenets/homeconditionalrender";
 import {useNavigate} from "react-router-dom";
+import {useAuth0} from "@auth0/auth0-react";
 
 const HomePage = () => {
 
+    const { isAuthenticated} = useAuth0();
     const homeButtonFunction = () => {
         navigate("/home");
         setShowComponent("");
@@ -14,7 +16,8 @@ const HomePage = () => {
     const navigate = useNavigate();
 
     const viewRecipeClick = () => {
-
+        setShowComponent("ViewRecipes");
+        setPageTitle("Select a Recipe")
     };
 
     const menuRecipeClick =() => {
@@ -30,8 +33,10 @@ const HomePage = () => {
         setPageTitle("Select a Culinary Type")
     };
     const [showComponent, setShowComponent] = useState<string>('');
-    const [pageTitle, setPageTitle] = useState<string>("Welcome to Menu Editor")
-    return<div id="homeLayout">
+    const [pageTitle, setPageTitle] = useState<string>("Welcome to the Menu Editor")
+
+    return isAuthenticated ? (
+        <div id="homeLayout">
         <div id="mainmenuLayout">
             <MainMenu
                 createRecipeClick={createRecipeClick}
@@ -43,21 +48,16 @@ const HomePage = () => {
         </div>
         <div id='homepage'>
         <div className='header'>
-            <div id='headerText'>
-                <h2>{pageTitle}</h2>
-            </div>
-            <div id='signOutButton'>
-                <button className="authbutton" onClick={() => navigate("/")}>
-                    <span className="homespan">Sign Out</span>
-                </button>
-            </div>
+            <h2>{pageTitle}</h2>
         </div>
         <div className='body'>
             <HomeConditionalRender option={showComponent}/>
         </div>
 
     </div>
-    </div>;
+    </div>):(<h2>
+        You need to log in first
+    </h2>);
 };
 
 export default  HomePage;

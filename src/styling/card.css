@@ -7,6 +7,11 @@
     border: 2px black;
     max-height: 350px;
     max-width: 250px;
+    cursor: pointer;
+}
+
+#cardbutton:hover{
+    background-color: gray;
 }
 
 #cardLayout {
@@ -20,10 +25,10 @@
 }
 
 #cardtype{
-    -moz-border-radius-topright: inherit;
-    -moz-border-radius-topleft: inherit;
     height: 10%;
     width: 250px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
 }
 
 #cardtypetext{

@@ -1,0 +1,23 @@
+
+
+#loginbutton{
+    padding: 10px 30px;
+    color: var(--main-block-color);
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: var(--main-txt2-color);
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    border-width: 4px;
+    font-size: 20px;
+    border-style: solid;
+    border-color: var(--main-txt2-color);
+}
+
+#loginbutton:active{
+    background-color: var(--main-txt-color);
+}
+
+#loginbutton:hover{
+    background-color: var(--main-txt-color);
+}

@@ -1,18 +1,10 @@
 import React from 'react';
 import '../styling/welcome.css';
-import {useNavigate} from "react-router-dom";
-
-
+import LoginButton from "../componenets/loginbutton";
 const WelcomePage = () => {
-    const navigate = useNavigate()
-
-    return <div id="welcomelayout">
-        <h1 id="welcometitle">Welcome to Remedy Recipes</h1>
-        <button id="welcomebutton" onClick={() => navigate('/home')}>
-            <span id="welcomespan">
-                Login
-            </span>
-        </button>
-    </div>
+    return<div id="lpcontent">
+            <h1 id="welcomeTitle">"The worlds simplest menu and recipe editor"</h1>
+            <LoginButton/>
+        </div>
 }
 export default WelcomePage;

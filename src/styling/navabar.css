@@ -1,0 +1,50 @@
+#navbarLayout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: #333333;
+}
+
+#navbarButton{
+    color: var(--main-txt-color);
+    font-size: 20px;
+    font-weight: normal;
+    background-color: #333333;
+    border-radius: 30px;
+    border: none;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#navbarButton:hover{
+    background-color: var(--main-txt-color);
+    color: white;
+}
+
+#navbarButton:active{
+    background-color: #48AAAD;
+    color: white;
+}
+
+#profpic{
+    background-size: cover;
+    background-color: var(--main-txt-color);
+    padding: 10px 26px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: var(--main-txt2-color);
+    border-style: solid;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+#profpic:active{
+    background-color: var(--main-txt2-color);
+}
+
+#profpic:hover{
+    background-color: var(--main-txt2-color);
+}

@@ -1,0 +1,19 @@
+#logoutbutton{
+    margin-left: 67%;
+    color: var(--main-txt-color);
+    font-size: 20px;
+    font-weight: normal;
+    background-color: var(--main-block-color);
+    border-radius: 30px;
+    border: none;
+}
+
+#logoutbutton:active{
+    background-color: var(--main-txt2-color);
+    color: white;
+}
+
+#logoutbutton:hover{
+    background-color: var(--main-txt-color);
+    color: white;
+}

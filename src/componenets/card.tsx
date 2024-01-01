@@ -14,6 +14,9 @@ const Card = ({ cuisineType, name, imgPath, desc }: CardProps) => {
     if(cuisineType === "Cuisine"){
         color = "cornflowerblue"
     }
+    else if(cuisineType === "Recipe"){
+        color = "#52B2Bf"
+    }
 
     return (
         <button id="cardbutton">
