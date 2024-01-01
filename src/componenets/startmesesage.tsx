@@ -7,9 +7,6 @@ const StartMessage = () => {
         <p>
             Get started by pressing the "create recipes" button in the the recipe navigation menu.
         </p>
-        <p>
-            Press the Home button in the top left to reset
-        </p>
     </TextBubble>
 }
 

@@ -20,12 +20,7 @@ const MainMenu = ({viewRecipeClick, createRecipeClick, menuRecipeClick, menuLayo
     if(showMenu) {
         return <div id='mainmenuformat'>
             <div className='heading'>
-                <div id='title'>
-                    <h2>Editor Menu</h2>
-                </div>
-                <div id='hbutton'>
-                    <button onClick={homeButtonFunction}/>
-                </div>
+                 <h2>Editor Menu</h2>
             </div>
             <div id='menuoptions'>
                 <div id='recipeOptions'>

@@ -1,27 +1,34 @@
+:root {
+    --main-txt-color: #52B2Bf;
+    --main-txt2-color: #48AAAD;
+    --main-block-color: #333333;
+}
+
 #appformat{
     width: 100%;
     height: 100vh;
+    background-image: url("./assets/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 #applayout{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 
 #header{
     width: 100%;
-    height: 35%;
-    background-image: url("./assets/banner.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 25%;
 }
 
 #appTitle{
     text-align: center;
-    font-weight: bold;
-    color: #333333;
+    font-weight: bolder;
+    color: var(--main-block-color);
     font-size: 70px;
     font-family: "sans-serif";
 }
@@ -32,11 +39,17 @@
 }
 
 #navbar{
-    width: 100%;
-    height: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 99%;
+    height: 6%;
 }
 
 #routes{
-    height: 60%;
+    height: 69%;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 99%;
 }
 

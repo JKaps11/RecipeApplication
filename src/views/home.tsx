@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import "../styling/home.css";
 import MainMenu from "../componenets/mainmenu";
-import LogoutButton from "../componenets/logoutbutton";
 import HomeConditionalRender from "../componenets/homeconditionalrender";
 import {useNavigate} from "react-router-dom";
 import {useAuth0} from "@auth0/auth0-react";
 
 const HomePage = () => {
 
-    const {user, isAuthenticated} = useAuth0();
+    const { isAuthenticated} = useAuth0();
     const homeButtonFunction = () => {
         navigate("/home");
         setShowComponent("");
@@ -17,7 +16,8 @@ const HomePage = () => {
     const navigate = useNavigate();
 
     const viewRecipeClick = () => {
-
+        setShowComponent("ViewRecipes");
+        setPageTitle("Select a Recipe")
     };
 
     const menuRecipeClick =() => {
@@ -33,10 +33,10 @@ const HomePage = () => {
         setPageTitle("Select a Culinary Type")
     };
     const [showComponent, setShowComponent] = useState<string>('');
-    const [pageTitle, setPageTitle] = useState<string>("Welcome to Menu Editor")
+    const [pageTitle, setPageTitle] = useState<string>("Welcome to the Menu Editor")
 
-    console.log(isAuthenticated);
-    return isAuthenticated ? (<div id="homeLayout">
+    return isAuthenticated ? (
+        <div id="homeLayout">
         <div id="mainmenuLayout">
             <MainMenu
                 createRecipeClick={createRecipeClick}
@@ -48,10 +48,7 @@ const HomePage = () => {
         </div>
         <div id='homepage'>
         <div className='header'>
-            <div id='headerText'>
-                <h2>{pageTitle}</h2>
-            </div>
-
+            <h2>{pageTitle}</h2>
         </div>
         <div className='body'>
             <HomeConditionalRender option={showComponent}/>

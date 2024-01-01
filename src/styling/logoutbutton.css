@@ -1,17 +1,19 @@
 #logoutbutton{
-    margin-left: 69%;
-    border-radius: 25px;
-    padding: 0 20px;
-    cursor: pointer;
+    margin-left: 67%;
+    color: var(--main-txt-color);
+    font-size: 20px;
+    font-weight: normal;
+    background-color: var(--main-block-color);
+    border-radius: 30px;
     border: none;
-    color: white;
-    background-color: #52B2Bf;
 }
 
 #logoutbutton:active{
- background-color: #48AAAD;
+    background-color: var(--main-txt2-color);
+    color: white;
 }
 
 #logoutbutton:hover{
-    background-color: #48AAAD ;
+    background-color: var(--main-txt-color);
+    color: white;
 }

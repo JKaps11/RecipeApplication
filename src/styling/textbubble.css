@@ -1,11 +1,9 @@
 #textbubble{
     margin-top:10px;
-    margin-left:5px;
-    margin-right:5px;
-    background-color: #333333;
+    background-color: var(--main-block-color);
     padding: 20px 5px 20px 5px;
     border-radius: 25px;
-    color: white;
+    color: var(--main-txt-color);
     width: 100%;
     height: fit-content;
     text-align: center;
