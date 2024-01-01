@@ -1,21 +1,18 @@
 import React, {useEffect, useState} from "react";
 import TextBubble from "./textbubble";
+import RecipeCard from "./recipecard";
 
 type Ingredient = {
-    name: string;
-    amount: string;
-}
-
-type Instruction = {
-    step: number;
-    desc: string;
+    Name: string;
+    Amount: string;
 }
 
 type Recipe = {
     Name: string;
     Culinary_Type: string;
+    Rating: number;
     Ingredients: Array<Ingredient>;
-    Instructions: Array<Instruction>;
+    Instructions: Array<string>;
 }
 const ViewRecipes = () => {
 
@@ -50,8 +47,7 @@ const ViewRecipes = () => {
             return recipeList?.map((recipe:Recipe) => {
                 console.log(recipe);
                 return(
-
-                    <button key={recipe.Name}>{recipe.Name}</button>
+                    <RecipeCard recipe={recipe} key={recipe.Name}/>
                 );
             })
         }
