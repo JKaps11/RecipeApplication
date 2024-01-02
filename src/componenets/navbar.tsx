@@ -5,7 +5,7 @@ import LogoutButton from "./logoutbutton";
 import {useAuth0} from "@auth0/auth0-react";
 const Navbar = () => {
     const navigate = useNavigate();
-    const {user} = useAuth0();
+    const {user, isAuthenticated} = useAuth0();
 
     return <div id="navbarLayout">
         <button id="navbarButton" onClick={() => navigate("./")}>
@@ -21,9 +21,10 @@ const Navbar = () => {
             MenuEditor
         </button>
         <LogoutButton/>
-        <button id="profpic" style={{backgroundImage: user?.picture}} onClick={() => navigate("/profile")}>
 
-        </button>
+        {isAuthenticated && <button id="profpic" style={{backgroundImage: user?.picture}} onClick={() => navigate("/profile")}>
+
+        </button>}
     </div>
 }
 

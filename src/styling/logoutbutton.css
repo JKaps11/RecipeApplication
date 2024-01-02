@@ -1,11 +1,15 @@
 #logoutbutton{
-    margin-left: 67%;
     color: var(--main-txt-color);
     font-size: 20px;
     font-weight: normal;
     background-color: var(--main-block-color);
     border-radius: 30px;
     border: none;
+    text-align: center;
+    padding: 10px 35px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 10px;
 }
 
 #logoutbutton:active{

@@ -1,7 +1,7 @@
 :root {
     --main-txt-color: #52B2Bf;
     --main-txt2-color: #48AAAD;
-    --main-block-color: #333333;
+    --main-block-color: #777B7E;
 }
 
 #appformat{
@@ -31,11 +31,6 @@
     color: var(--main-block-color);
     font-size: 70px;
     font-family: "sans-serif";
-}
-
-#welcomeTitle{
-    color: black;
-    text-align: center;
 }
 
 #navbar{

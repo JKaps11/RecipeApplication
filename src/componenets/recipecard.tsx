@@ -1,6 +1,7 @@
 import React from "react";
 import StarsRating from "./ratingstars";
 import RecipeInfo from "./recipeinfo";
+import "../styling/recipecard.css";
 
 type Ingredient = {
     Name: string;
@@ -25,12 +26,14 @@ const RecipeCard = ({recipe}:recipeCardProps) => {
         return <RecipeInfo recipe={recipe}/>
     };
 
-    return<button onClick={clickHandler}>
-        <div>
-            <StarsRating rating={recipe.Rating}/>
-        </div>
-        <div>
-            <h2>{recipe.Name}</h2>
+    return<button id="recipecardbutton" onClick={clickHandler}>
+        <div id="recipecardlayout">
+            <div id="recipecardstars">
+                <StarsRating rating={recipe.Rating}/>
+            </div>
+            <div>
+                <h2 id="recipecardname">{recipe.Name}</h2>
+            </div>
         </div>
     </button>
 }
