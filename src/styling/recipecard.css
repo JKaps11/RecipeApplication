@@ -6,6 +6,14 @@
     background-color: var(--main-txt-color);
 }
 
+#recipecardbutton:hover{
+    background-color: var(--main-txt2-color);
+}
+
+#recipecardbutton:active{
+    background-color: var(--main-txt2-color);
+}
+
 #recipecardlayout{
     height: 220px;
     width: 170px;

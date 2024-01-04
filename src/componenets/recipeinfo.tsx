@@ -1,5 +1,7 @@
 import React from "react";
 import StarsRating from "./ratingstars";
+import "../styling/recipeinfo.css";
+import TextBubble from "./textbubble";
 
 type Ingredient = {
     Name: string;
@@ -14,11 +16,11 @@ type Recipe = {
     Instructions: Array<string>;
 }
 interface recipeInfoProps{
-    recipe:Recipe;
+    recipe:Recipe | undefined;
 }
 const RecipeInfo = ({recipe}:recipeInfoProps) =>{
 
-    const displayIngredients = (ingredients:Array<Ingredient>) =>{
+    const displayIngredients = (ingredients:Array<Ingredient>|undefined) =>{
         if(ingredients?.length === 0 ){
             return <h2>No ingredients found for this recipe</h2>
         }
@@ -33,7 +35,7 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
         }
     };
 
-    const displayInstructions = (instructions:Array<string>) => {
+    const displayInstructions = (instructions:Array<string>|undefined) => {
         if(instructions?.length === 0 ){
             return <h2>No instructions found for this recipe</h2>
         }
@@ -44,23 +46,29 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
         }
     };
 
-    return <div id="recipeInfoLayout">
+    return <TextBubble>
+        <div id="recipeInfoLayout">
         <div id="name">
-            <h2>{recipe.Name}</h2>
+            <h2>{recipe?.Name}</h2>
         </div>
         <div id="rirating">
-            <StarsRating rating={recipe.Rating}/>
+            <p>Rating</p>
+            <StarsRating rating={recipe?.Rating}/>
         </div>
         <div id="rictype">
-            <h2>{recipe.Culinary_Type}</h2>
+            <p>Culinary Type</p>
+            <h2>{recipe?.Culinary_Type}</h2>
         </div>
         <div id="riingredients">
-            {displayIngredients(recipe.Ingredients)}
+            <p>Ingredients</p>
+            {displayIngredients(recipe?.Ingredients)}
         </div>
         <div id="rinstructions">
-            {displayInstructions(recipe.Instructions)}
+            <p>Instructions</p>
+            {displayInstructions(recipe?.Instructions)}
         </div>
     </div>
+    </TextBubble>
 }
 
 export default RecipeInfo;

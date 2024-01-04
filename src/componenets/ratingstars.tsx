@@ -1,12 +1,17 @@
 import React from "react";
 import "../styling/ratingstars.css";
 interface ratingProps{
-    rating:number;
+    rating:number|undefined;
 }
 
 const StarsRating = ({rating}:ratingProps) => {
 
-    const displayStars =  (rating: number) => {
+    const displayStars =  (rating: number | undefined) => {
+
+        if (typeof rating === "undefined"){
+            return ;
+        }
+
         let starType = "";
 
         if(rating === 10){

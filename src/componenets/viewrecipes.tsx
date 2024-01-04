@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import TextBubble from "./textbubble";
 import RecipeCard from "./recipecard";
+import RecipeInfo from "./recipeinfo";
 
 type Ingredient = {
     Name: string;
@@ -16,7 +17,16 @@ type Recipe = {
 }
 const ViewRecipes = () => {
 
-    const [recipeList, setRecipeList] = useState<Array<Recipe>>()
+    const [recipeList, setRecipeList] = useState<Array<Recipe>>();
+    const [showRecipeInfo, setShowRecipeInfo] = useState<boolean>(false);
+    const [currRecipe, setCurrRecipe] = useState<Recipe>();
+
+    //Function passed down to change state and activate recipe info component
+    //Function activates when recipe card is clicked
+    const viewRecipeInfo = (r:Recipe) => {
+        setCurrRecipe(r);
+        setShowRecipeInfo(true);
+    }
 
     useEffect(() =>{
         async function fetchRecipes() {
@@ -47,12 +57,13 @@ const ViewRecipes = () => {
             return recipeList?.map((recipe:Recipe) => {
                 console.log(recipe);
                 return(
-                    <RecipeCard recipe={recipe} key={recipe.Name}/>
+                    <RecipeCard recipe={recipe} clickMethod={viewRecipeInfo} key={recipe.Name}/>
                 );
             })
         }
     }
-    return <TextBubble>
+    return showRecipeInfo ? <RecipeInfo recipe={currRecipe}/>
+        :<TextBubble>
         {displayRecipes()}
     </TextBubble>
 }

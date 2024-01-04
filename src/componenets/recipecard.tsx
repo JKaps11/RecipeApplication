@@ -1,6 +1,5 @@
 import React from "react";
 import StarsRating from "./ratingstars";
-import RecipeInfo from "./recipeinfo";
 import "../styling/recipecard.css";
 
 type Ingredient = {
@@ -17,16 +16,15 @@ type Recipe = {
 }
 interface recipeCardProps{
     recipe:Recipe;
+    clickMethod:(r:Recipe) => void;
 }
 
 
-const RecipeCard = ({recipe}:recipeCardProps) => {
+const RecipeCard = ({recipe, clickMethod}:recipeCardProps) => {
 
-    const clickHandler = () =>{
-        return <RecipeInfo recipe={recipe}/>
-    };
 
-    return<button id="recipecardbutton" onClick={clickHandler}>
+
+    return<button id="recipecardbutton" onClick={() => clickMethod(recipe)}>
         <div id="recipecardlayout">
             <div id="recipecardstars">
                 <StarsRating rating={recipe.Rating}/>
