@@ -41,33 +41,39 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
         }
         else{
             return instructions?.map((instruction:string) => {
-                return <p>{instruction}</p>
+                return <p id="ritext2" >{instruction}</p>
             })
         }
     };
 
     return <TextBubble>
-        <div id="recipeInfoLayout">
         <div id="name">
-            <h2>{recipe?.Name}</h2>
+            <h1>{recipe?.Name}</h1>
         </div>
-        <div id="rirating">
-            <p>Rating</p>
-            <StarsRating rating={recipe?.Rating}/>
+
+        <div id="recipeInfoLayout">
+            <div id="rilblock">
+                <div id="ripicture"></div>
+                <div id="rilbdiv">
+                    <h2>Rating:</h2>
+                    <StarsRating rating={recipe?.Rating}/>
+                </div>
+                <div id="rilbdiv">
+                    <h2>Culinary Type:</h2>
+                    <p>{recipe?.Culinary_Type}</p>
+                </div>
+            </div>
+            <div id="rirblock">
+                <div id="rirbdiv">
+                    <h2 id="rititle2">Ingredients</h2>
+                    {displayIngredients(recipe?.Ingredients)}
+                </div>
+                <div id="rirbdiv">
+                    <h2 id="rititle2">Instructions</h2>
+                    {displayInstructions(recipe?.Instructions)}
+                </div>
+            </div>
         </div>
-        <div id="rictype">
-            <p>Culinary Type</p>
-            <h2>{recipe?.Culinary_Type}</h2>
-        </div>
-        <div id="riingredients">
-            <p>Ingredients</p>
-            {displayIngredients(recipe?.Ingredients)}
-        </div>
-        <div id="rinstructions">
-            <p>Instructions</p>
-            {displayInstructions(recipe?.Instructions)}
-        </div>
-    </div>
     </TextBubble>
 }
 

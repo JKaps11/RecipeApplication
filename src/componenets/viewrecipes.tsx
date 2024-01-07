@@ -62,10 +62,13 @@ const ViewRecipes = () => {
             })
         }
     }
+
     return showRecipeInfo ? <RecipeInfo recipe={currRecipe}/>
         :<TextBubble>
-        {displayRecipes()}
-    </TextBubble>
+            <div id="vrecipeslayout">
+                {displayRecipes()}
+            </div>
+            </TextBubble>
 }
 
 export default ViewRecipes;

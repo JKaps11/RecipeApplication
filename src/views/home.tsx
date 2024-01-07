@@ -17,7 +17,7 @@ const HomePage = () => {
 
     const viewRecipeClick = () => {
         setShowComponent("ViewRecipes");
-        setPageTitle("Select a Recipe")
+        setPageTitle("View Recipes")
     };
 
     const menuRecipeClick =() => {
