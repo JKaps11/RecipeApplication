@@ -10,6 +10,7 @@ type Ingredient = {
 type Recipe = {
     Name: string;
     Culinary_Type: string;
+    Description: string;
     Rating: number;
     Ingredients: Array<Ingredient>;
     Instructions: Array<string>;
