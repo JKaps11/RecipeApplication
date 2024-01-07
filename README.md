@@ -7,3 +7,5 @@ Using the MERN Stack
    - Node.js
 
 login authentication and authorization with auth0
+
+Using gridfs instead of cloud bucket proivder because I don't want to spend money
