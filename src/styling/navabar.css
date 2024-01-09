@@ -3,48 +3,115 @@
     height: 100%;
     display: flex;
     flex-direction: row;
-    border-radius: 30px;
-    border: 2px solid black;
-    background-color: #333333;
+    justify-content: center;
+    border-bottom-color: var(--main-txt-color) ;
+}
+
+#menuIconButton:hover{
+    opacity: 0.7;
+}
+
+#menuIconButton:active{
+    opacity: 0.5;
+}
+
+#menuIconButton{
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menuIcon{
+    height: 100%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+#menuIconImage{
+    object-fit: cover;
+    max-height: 40px;
+    max-width: 40px;
+    height: 40px;
+    width: 40px;
+}
+
+
+#titlediv{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 24%;
+    height:100%;
+}
+
+#title{
+    cursor: default;
+    margin: 0 0 0 0;
+    padding: 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--main-txt-color);
+    font-family : 'sans-serif';
+}
+
+#navbarButtonsLayout{
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: 10px;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 #navbarButton{
     color: var(--main-txt-color);
-    font-size: 20px;
-    font-weight: normal;
-    background-color: #333333;
-    border-radius: 30px;
-    border: none;
-    margin-left: 20px;
+    font-size: 25px;
+    font-weight: Bold;
+    background-color: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: var(--main-txt-color);
+    border-bottom-style: hidden;
     cursor: pointer;
+    align-self: center;
+    padding: 10px 15px;
+    justify-self: flex-end;
 }
 
 #navbarButton:hover{
-    background-color: var(--main-txt-color);
-    color: white;
+    border-bottom-style: solid;
+
+
 }
 
 #navbarButton:active{
-    background-color: #48AAAD;
-    color: white;
+    border-bottom-style: solid;
+
 }
 
 #profpic{
     background-size: cover;
-    background-color: var(--main-txt-color);
-    padding: 10px 26px;
+    background-position: center;
+    padding: 23px 25px;
     border-radius: 50%;
     border-width: 2px;
-    border-color: var(--main-txt2-color);
+    border-color: var(--main-txt-color);
     border-style: solid;
-    margin-left: 25px;
+    margin-left: 10px;
     cursor: pointer;
+    align-self: center;
+
 }
 
 #profpic:active{
-    background-color: var(--main-txt2-color);
+    opacity: 0.5;
 }
 
 #profpic:hover{
-    background-color: var(--main-txt2-color);
+    opacity: 0.7;
 }

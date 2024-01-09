@@ -1,25 +1,32 @@
 import React, {useEffect, useState} from "react";
-import TextBubble from "./textbubble";
+import RecipeCard from "../componenets/recipecard";
+import RecipeInfo from "../componenets/recipeinfo";
 
 type Ingredient = {
-    name: string;
-    amount: string;
-}
-
-type Instruction = {
-    step: number;
-    desc: string;
+    Name: string;
+    Amount: string;
 }
 
 type Recipe = {
     Name: string;
     Culinary_Type: string;
+    Description: string;
+    Rating: number;
     Ingredients: Array<Ingredient>;
-    Instructions: Array<Instruction>;
+    Instructions: Array<string>;
 }
 const ViewRecipes = () => {
 
-    const [recipeList, setRecipeList] = useState<Array<Recipe>>()
+    const [recipeList, setRecipeList] = useState<Array<Recipe>>();
+    const [showRecipeInfo, setShowRecipeInfo] = useState<boolean>(false);
+    const [currRecipe, setCurrRecipe] = useState<Recipe>();
+
+    //Function passed down to change state and activate recipe info component
+    //Function activates when recipe card is clicked
+    const viewRecipeInfo = (r:Recipe) => {
+        setCurrRecipe(r);
+        setShowRecipeInfo(true);
+    }
 
     useEffect(() =>{
         async function fetchRecipes() {
@@ -48,17 +55,19 @@ const ViewRecipes = () => {
         }
         else{
             return recipeList?.map((recipe:Recipe) => {
-                console.log(recipe);
                 return(
-
-                    <button key={recipe.Name}>{recipe.Name}</button>
+                    <RecipeCard recipe={recipe} clickMethod={viewRecipeInfo} key={recipe.Name}/>
                 );
             })
         }
     }
-    return <TextBubble>
-        {displayRecipes()}
-    </TextBubble>
+
+    return showRecipeInfo ? <RecipeInfo recipe={currRecipe}/>
+        :<>
+            <div id="vrecipeslayout">
+                {displayRecipes()}
+            </div>
+            </>
 }
 
 export default ViewRecipes;
