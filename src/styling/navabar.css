@@ -17,27 +17,33 @@
 
 #menuIconButton{
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
     background: transparent;
     border: none;
     padding: 0;
     margin: 0;
 }
 
+#menuIconLabel{
+    color: var(--main-txt-color);
+    font-size: 25px;
+    font-weight: Bold;
+}
+
 #menuIcon{
     height: 100%;
-    width: 5%;
+    width: 10%;
     display: flex;
     justify-content: center;
 }
 
-#menuIconImage{
-    object-fit: cover;
-    max-height: 40px;
-    max-width: 40px;
-    height: 40px;
-    width: 40px;
+#menuIconColor{
+    fill: var(--main-txt-color);
 }
-
 
 #titlediv{
     align-items: center;

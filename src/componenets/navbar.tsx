@@ -10,23 +10,27 @@ const Navbar = ({clickMenuIcon}:navbarProps) => {
     const navigate = useNavigate();
     const {user, isAuthenticated} = useAuth0();
 
-
-    const menuImgUrl:string = require("../assets/menuIcon.png")
-
     return <div id ="navbarLayout">
         <div id="menuIcon">
             <button id="menuIconButton" onClick={clickMenuIcon}>
-                <img id="menuIconImage" src={menuImgUrl} alt="menuIcon"></img>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" >
+                    <rect width="40" height="40" fill="#none"/>
+                    <path id="menuIconColor" d="M3 6H37V12H3V6Z" />
+                    <path id="menuIconColor" d="M3 28H37V34H3V28Z" />
+                    <path id="menuIconColor" d="M3 17H37V23H3V17Z" />
+                </svg>
+                <p id="menuIconLabel">Menu</p>
+
             </button>
         </div>
-    <div id="titlediv">
-        <h1 id="title">Remedy Recipes</h1>
-    </div>
-    <div id="navbarButtonsLayout">
-        <button id="navbarButton" onClick={() => navigate("./")}>
-            Welcome
-        </button>
-        <button id="navbarButton" onClick={() => navigate("/features")}>
+        <div id="titlediv">
+            <h1 id="title">Remedy Recipes</h1>
+        </div>
+        <div id="navbarButtonsLayout">
+            <button id="navbarButton" onClick={() => navigate("./")}>
+                Welcome
+            </button>
+            <button id="navbarButton" onClick={() => navigate("/features")}>
             Features
         </button>
         <button id="navbarButton" onClick={() => navigate("/about")}>
