@@ -1,9 +1,8 @@
 import React from "react";
-import TextBubble from "./textbubble";
 
 const NameSelector = () => {
     return (
-        <TextBubble>
+        <>
             <div>
                 <h1>Enter in the name of your recipe below!</h1>
 
@@ -16,7 +15,7 @@ const NameSelector = () => {
                     </div>
                 </form>
             </div>
-        </TextBubble>
+        </>
     )
 }
 

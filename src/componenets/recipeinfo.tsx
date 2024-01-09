@@ -1,7 +1,6 @@
 import React from "react";
 import StarsRating from "./ratingstars";
 import "../styling/recipeinfo.css";
-import TextBubble from "./textbubble";
 
 type Ingredient = {
     Name: string;
@@ -43,7 +42,7 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
         }
     };
 
-    return <TextBubble>
+    return <>
         <div>
             <h1 id="riname">{recipe?.Name}</h1>
         </div>
@@ -79,7 +78,7 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
                 </div>
             </div>
         </div>
-    </TextBubble>
+    </>
 }
 
 export default RecipeInfo;

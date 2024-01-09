@@ -1,14 +1,37 @@
-
+#landingpage{
+    width: 100%;
+    height: 100%;
+}
 
 #lpcontent{
     align-items: center;
-    width: 100%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
     flex-direction: column;
     display: flex;
     justify-content: center;
+    animation: fadeUp 2s;
+
+}
+
+@keyframes fadeUp {
+    from{
+        opacity: 0;
+        transform: translateY(60%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 #welcomeTitle{
-    color: #333333;
+    font-size: 40px;
+    text-align: center;
+    color: var(--main-txt-color);
     margin-bottom: 50px;
+    font-family: 'sans-serif';
 }

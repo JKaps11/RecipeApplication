@@ -1,9 +1,8 @@
 import React from "react";
-import TextBubble from "./textbubble";
 import Card from "./card"
 import "../styling/culinaryselector.css"
 const CulinarySelector = () => {
-    return <TextBubble>
+    return <>
         <div id="csLayout">
             <div id="cscards">
                 <div id="csfrench">
@@ -51,7 +50,7 @@ const CulinarySelector = () => {
                 <p>You can select the culinary type you want by clicking on a card above</p>
             </div>
         </div>
-    </TextBubble>;
+    </>;
 }
 
 export default CulinarySelector;

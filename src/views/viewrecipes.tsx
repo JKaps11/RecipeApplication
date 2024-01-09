@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
-import TextBubble from "./textbubble";
-import RecipeCard from "./recipecard";
-import RecipeInfo from "./recipeinfo";
+import RecipeCard from "../componenets/recipecard";
+import RecipeInfo from "../componenets/recipeinfo";
 
 type Ingredient = {
     Name: string;
@@ -56,7 +55,6 @@ const ViewRecipes = () => {
         }
         else{
             return recipeList?.map((recipe:Recipe) => {
-                console.log(recipe);
                 return(
                     <RecipeCard recipe={recipe} clickMethod={viewRecipeInfo} key={recipe.Name}/>
                 );
@@ -65,11 +63,11 @@ const ViewRecipes = () => {
     }
 
     return showRecipeInfo ? <RecipeInfo recipe={currRecipe}/>
-        :<TextBubble>
+        :<>
             <div id="vrecipeslayout">
                 {displayRecipes()}
             </div>
-            </TextBubble>
+            </>
 }
 
 export default ViewRecipes;

@@ -1,0 +1,43 @@
+#menuFormat{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#menuTitleDiv{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-accent-color);
+}
+
+#menuTitle{
+    padding: 0;
+    margin: 0;
+    color: var(--main-txt-color);
+}
+
+#menuOptions{
+    margin: 20px;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+}
+
+#menuOptionButton{
+    background-color: transparent;
+    border-radius: 10px;
+    border: 5px solid var(--main-accent2-color);
+    color: var(--main-accent-color);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}

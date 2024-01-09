@@ -1,15 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import "../styling/navabar.css";
-import LogoutButton from "./logoutbutton";
 import {useAuth0} from "@auth0/auth0-react";
-const Navbar = () => {
+
+interface navbarProps{
+    clickMenuIcon: () => void;
+}
+const Navbar = ({clickMenuIcon}:navbarProps) => {
     const navigate = useNavigate();
     const {user, isAuthenticated} = useAuth0();
 
-    return <div id="navbarLayout">
+
+    const menuImgUrl:string = require("../assets/menuIcon.png")
+
+    return <div id ="navbarLayout">
+        <div id="menuIcon">
+            <button id="menuIconButton" onClick={clickMenuIcon}>
+                <img id="menuIconImage" src={menuImgUrl} alt="menuIcon"></img>
+            </button>
+        </div>
+    <div id="titlediv">
+        <h1 id="title">Remedy Recipes</h1>
+    </div>
+    <div id="navbarButtonsLayout">
         <button id="navbarButton" onClick={() => navigate("./")}>
-            Home
+            Welcome
         </button>
         <button id="navbarButton" onClick={() => navigate("/features")}>
             Features
@@ -18,13 +33,13 @@ const Navbar = () => {
             About
         </button>
         <button id="navbarButton" onClick={() => navigate("/home")}>
-            MenuEditor
+            Home
         </button>
-        <LogoutButton/>
 
         {isAuthenticated && <button id="profpic" style={{backgroundImage: user?.picture}} onClick={() => navigate("/profile")}>
 
         </button>}
+    </div>
     </div>
 }
 

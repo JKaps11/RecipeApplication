@@ -2,22 +2,22 @@
 
 #loginbutton{
     padding: 10px 30px;
-    color: var(--main-block-color);
-    border-radius: 30px;
+    color: var(--main-txt-color);
+    border-radius: 15px;
+    border: 1px solid var(--main-txt-color);
     cursor: pointer;
-    background-color: var(--main-txt2-color);
+    background-color:transparent;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: bold;
-    border-width: 4px;
     font-size: 20px;
-    border-style: solid;
-    border-color: var(--main-txt2-color);
+    opacity: 1;
+
 }
 
 #loginbutton:active{
-    background-color: var(--main-txt-color);
+    opacity: 0.7;
 }
 
 #loginbutton:hover{
-    background-color: var(--main-txt-color);
+    opacity: 0.7;
 }
