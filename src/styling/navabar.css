@@ -34,6 +34,7 @@
     font-weight: Bold;
 }
 
+
 #menuIcon{
     height: 100%;
     width: 10%;
@@ -41,8 +42,12 @@
     justify-content: center;
 }
 
-#menuIconColor{
+#menuIconColor1, #menuIconColor2, #menuIconColor3{
     fill: var(--main-txt-color);
+}
+
+.morphing {
+    animation: morphAnimation 1.5s ease-in-out;
 }
 
 #titlediv{

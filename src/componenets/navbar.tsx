@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {useNavigate} from "react-router-dom";
 import "../styling/navabar.css";
 import {useAuth0} from "@auth0/auth0-react";
@@ -13,11 +13,11 @@ const Navbar = ({clickMenuIcon}:navbarProps) => {
     return <div id ="navbarLayout">
         <div id="menuIcon">
             <button id="menuIconButton" onClick={clickMenuIcon}>
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" >
+                <svg id="morph_svg" width="40" height="40" viewBox="0 0 40 40" fill="none" >
                     <rect width="40" height="40" fill="#none"/>
-                    <path id="menuIconColor" d="M3 6H37V12H3V6Z" />
-                    <path id="menuIconColor" d="M3 28H37V34H3V28Z" />
-                    <path id="menuIconColor" d="M3 17H37V23H3V17Z" />
+                    <path id="menuIconColor1" d="M3 6H37V12H3V6Z" />
+                    <path id="menuIconColor2" d="M3 28H37V34H3V28Z" />
+                    <path id="menuIconColor3" d="M3 17H37V23H3V17Z" />
                 </svg>
                 <p id="menuIconLabel">Menu</p>
 
