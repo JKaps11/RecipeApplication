@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border-bottom-color: var(--main-txt-color) ;
 }
 
 #menuIconButton:hover{
@@ -42,13 +41,42 @@
     justify-content: center;
 }
 
-#menuIconColor1, #menuIconColor2, #menuIconColor3{
+#menuIconColor1, #menuIconColor2, #menuIconColor3 {
     fill: var(--main-txt-color);
+    transition: transform 1s ease;
 }
 
-.morphing {
-    animation: morphAnimation 1.5s ease-in-out;
+#menuIconColor1.morphing {
+    transform-origin: center center;
+    transform: rotate(-125deg);
 }
+
+#menuIconColor2.morphing {
+    transform-origin: center center;
+    transform: translateY(-15%);
+}
+
+#menuIconColor3.morphing {
+    transform-origin: center center;
+    transform: rotate(-55deg);
+}
+
+#menuIconColor1.morphing.reverse {
+    transform-origin: center center;
+    transform: rotate(125deg) ;
+}
+
+#menuIconColor2.morphing.reverse {
+    transform-origin: center center;
+    transform: translateY(0);
+}
+
+#menuIconColor3.morphing.reverse {
+    transform-origin: center center;
+    transform: rotate(55deg);
+}
+
+
 
 #titlediv{
     align-items: center;

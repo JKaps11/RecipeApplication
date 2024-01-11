@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import RecipeCard from "../componenets/recipecard";
 import RecipeInfo from "../componenets/recipeinfo";
+import "../styling/viewrecipes.css"
 
 type Ingredient = {
     Name: string;
@@ -49,9 +50,8 @@ const ViewRecipes = () => {
 
     const displayRecipes = () =>{
         if(recipeList?.length === 0){
-            return <div>
-                <h2>You have not created any recipes yet</h2>
-            </div>
+            return <h2 style={{textAlign: "center", color:"white"}}>You have not created any recipes yet</h2>
+
         }
         else{
             return recipeList?.map((recipe:Recipe) => {
@@ -63,11 +63,12 @@ const ViewRecipes = () => {
     }
 
     return showRecipeInfo ? <RecipeInfo recipe={currRecipe}/>
-        :<>
-            <div id="vrecipeslayout">
+        :<div id="viewRecipesLayout">
+            <div id="searchDiv"></div>
+            <div id="recipesLayout">
                 {displayRecipes()}
             </div>
-            </>
+            </div>
 }
 
 export default ViewRecipes;
