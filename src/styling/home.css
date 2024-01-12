@@ -1,35 +1,78 @@
 #homeLayout{
     height: 100%;
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding-left:15%;
+    animation: fadeUp 2s;
+}
+
+@keyframes fadeUp {
+    from{
+        opacity: 0;
+        transform: translateY(60%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 
 #panel1 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 700px;
-    background-image: url("../assets/wavetwo.svg"), url("../assets/banner.jpg");
-    background-size: contain, cover;
-    background-repeat: no-repeat, no-repeat;
-    background-position: bottom, center;
-    }
+    flex-direction: row;
+    margin: 50px auto;
+    width: 80%;
+    height: 600px;
+    min-height: 600px;
+    background-color: #1d475c;
+    border-radius: 30px;
+}
+
+#panelOnePicture{
+    max-height: 500px;
+    max-width: 350px;
+    object-fit: contain;
+    border-radius: 10%;
+}
 
 #panelTitleDiv{
+    height: 100%;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
 
+#panelPictureDiv{
+    height: 100%;
+    width:40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #homeTitle{
     padding: 0;
     margin: 0;
-    color: #333333;
-    font-family: 'sans-serif';
+    color: var(--main-txt-color);
     font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: -2px;
+}
+
+#homeTitleTwo{
+    padding: 0;
+    margin: 0;
+    color: var(--main-txt-color);
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: -2px;
 }
 
 #homeText{
@@ -37,8 +80,9 @@
     margin-left: auto;
     width:70%;
     text-align: center;
-    font-size: 30px;
-    color: #333333;
+    line-height: 30px;
+    font-size: 20px;
+    color: var(--main-txt-color);
 }
 
 #visual{
@@ -46,10 +90,11 @@
 }
 
 #panel3{
-    background-image: url("../assets/wavebottom.svg"), linear-gradient(0deg, rgba(195,52,52,1) 0%, rgba(200,74,63,1) 50%, rgba(195,52,52,1) 100%); ;
+    background-image: url("../assets/wavebottom.svg");
+    background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-color:rgb(195,52,52);
+    background-color:var(--main-txt-color);
     transform: scaleY(-1);
 
     width: 100%;

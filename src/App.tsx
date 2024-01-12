@@ -3,7 +3,6 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "./views/home";
 import AboutPage from "./views/aboutpage";
 import React, {useState} from 'react';
-import WelcomePage from "./views/welcome";
 import AccountPage from "./views/accountpage";
 import FeaturesPage from "./views/featurespage";
 import Navbar from "./componenets/navbar";
@@ -29,17 +28,16 @@ function App() {
             <div id="navbar">
                 <Navbar showDropDownMenu={showDropDownMenu} clickMenuIcon={clickMenuIcon}/>
             </div>
-            <div id="appmenu">
-                {showDropDownMenu && <Menu/>}
-            </div>
+            <div id="appmain">
+                {showDropDownMenu && <div id="appmenu"><Menu/></div>}
+
             <div id="routes">
                 <Routes>
-                    <Route path='/' element={<WelcomePage/>}/>
+                    <Route path='/' element={<HomePage/>}/>
+                    <Route path='/features' element={<FeaturesPage/>}/>
+                    <Route path='/about' element={<AboutPage/>}/>
                     {isAuthenticated &&
                         <>
-                            <Route path='/home' element={<HomePage/>}/>
-                            <Route path='/features' element={<FeaturesPage/>}/>
-                            <Route path='/about' element={<AboutPage/>}/>
                             <Route path='/profile' element={<AccountPage/>}/>
                             <Route path='/viewrecipes' element={<ViewRecipes/>}/>
                             <Route path='/createrecipes' element={<CreateRecipes/>}/>
@@ -48,6 +46,7 @@ function App() {
                             <Route path='/settings' element={<Settings/>}/>
                         </>}
                 </Routes>
+            </div>
             </div>
         </BrowserRouter>
     </div>;

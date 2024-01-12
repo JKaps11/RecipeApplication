@@ -29,16 +29,13 @@ const Navbar = ({showDropDownMenu, clickMenuIcon}:navbarProps) => {
         </div>
         <div id="navbarButtonsLayout">
             <button id="navbarButton" onClick={() => navigate("./")}>
-                Welcome
+                Home
             </button>
             <button id="navbarButton" onClick={() => navigate("/features")}>
             Features
         </button>
         <button id="navbarButton" onClick={() => navigate("/about")}>
             About
-        </button>
-        <button id="navbarButton" onClick={() => navigate("/home")}>
-            Home
         </button>
 
         {isAuthenticated && <button id="profpic" style={{backgroundImage: user?.picture}} onClick={() => navigate("/profile")}>
