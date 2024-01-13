@@ -4,7 +4,6 @@
     display: flex;
     row-gap: 20px;
     flex-direction: column;
-
 }
 
 #searchDiv{
@@ -16,8 +15,15 @@
     width: 90%;
     background-color: var(--main-accent2-color);
 }
-
 #recipesLayout{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: auto;
+    height: 100%;
+    width: 95%;
+    grid-template-columns: auto auto auto;
+}
+#recipesDiv{
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
@@ -25,6 +31,5 @@
     width: 90%;
     column-gap: 30px;
     row-gap: 30px;
-    grid-template-columns: auto auto auto;
     background-color: var(--main-accent2-color);
 }

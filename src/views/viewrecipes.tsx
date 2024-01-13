@@ -65,8 +65,10 @@ const ViewRecipes = () => {
     return showRecipeInfo ? <RecipeInfo recipe={currRecipe}/>
         :<div id="viewRecipesLayout">
             <div id="searchDiv"></div>
-            <div id="recipesLayout">
+            <div id="recipesDiv">
+                <div id="recipesLayout">
                 {displayRecipes()}
+                </div>
             </div>
             </div>
 }
