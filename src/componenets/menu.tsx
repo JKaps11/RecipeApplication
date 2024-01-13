@@ -36,7 +36,7 @@ const Menu = () => {
 
     const displayMenuOptions = (mos: Array<MenuOption>) :ReactNode =>{
         return mos.map((mo: MenuOption) => {
-            return <button id="menuOptionButton" onClick={() => navigate(mo.path)}>{mo.name}</button>;
+            return <button key={mo.name} id="menuOptionButton" onClick={() => navigate(mo.path)}>{mo.name}</button>;
         });
     }
 
