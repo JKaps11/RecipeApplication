@@ -42,7 +42,7 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
         }
     };
 
-    return <>
+    return <div id="recipeInfoDiv">
         <div>
             <h1 id="riname">{recipe?.Name}</h1>
         </div>
@@ -51,8 +51,7 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
             <div id="rilblock">
                 <div id="ripicture"></div>
                 <div id="rilbdiv">
-                    <h2 id="rititle1">Rating:</h2>
-                    <StarsRating rating={recipe?.Rating}/>
+                    <h2 id="rititle1">Rating: {recipe?.Rating}/10</h2>
                 </div>
                 <div id="rilbdiv">
                     <h2 id="rititle1">Culinary Type:</h2>
@@ -78,7 +77,7 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
                 </div>
             </div>
         </div>
-    </>
+    </div>
 }
 
 export default RecipeInfo;

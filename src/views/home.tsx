@@ -1,6 +1,5 @@
 import React, { useRef} from 'react';
 import "../styling/home.css";
-import { useAuth0 } from "@auth0/auth0-react";
 import WelcomePage from "../componenets/welcome";
 
 const HomePage = () => {

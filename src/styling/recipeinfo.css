@@ -1,7 +1,16 @@
+#recipeInfoDiv{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: fadeUp 2s;
+}
+
 #riname{
     padding: 0;
     margin: 0;
     font-size: 40px;
+    text-align: center;
     color: var(--main-txt-color);
 }
 
@@ -30,7 +39,7 @@
     column-gap: 20px;
     align-items: center;
     justify-content: center;
-    background-color: var(--main-txt-color);
+    background-color: var(--main-accent2-color);
 }
 
 #rirblock{
@@ -39,14 +48,13 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    justify-content: center;
     align-items: center;
 }
 
 #rirbdiv{
     width: 100%;
     border-radius: 25px;
-    background-color: var(--main-txt-color);
+    background-color: var(--main-accent2-color);
 }
 
 #ingredientsList{
@@ -61,26 +69,26 @@
 }
 
 #rititle2{
-    color: white;
+    color: var(--main-txt-color);
     text-align: center;
 }
 
 #ritext2{
-    color: white;
+    color: var(--main-txt-color);
     text-align: left;
 }
 
 #rititle1{
     margin: 0;
     padding: 0;
-    color: white;
+    color: var(--main-txt-color);
 }
 
 #ritext1{
     margin: 0;
     padding: 0;
     font-size:25px;
-    color:white
+    color: var(--main-txt-color);
 }
 
 
