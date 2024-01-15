@@ -16,9 +16,11 @@ const TextInput = ({title, placeholder, sendUserInput, paragraph}:textInputProps
         const inputValue = e.target.value;
 
         if (/^[a-z ',-]+$/i.test(inputValue)) {
-
+            e.target.classList.remove("wrong")
+            sendUserInput(inputValue);
         }
-        else{
+        else if (!e.target.classList.contains("wrong")){
+            e.target.classList.add("wrong");
         }
     };
 

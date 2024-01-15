@@ -8,17 +8,19 @@ interface listCreatorProps{
 }
 
 const ListCreator = ({title, placeholder, sendUserInput, typeIngredient}:listCreatorProps)=> {
-    const [numInputFields, setNumInputFields] = useState(2);
+    const [numInputFields, setNumInputFields] = useState(1);
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
 
         const inputValue = e.target.value;
 
+        //makes text red if the user doesn't enter an invalid input
+        //will remove it when the user fixes it
         if (/^[a-z -]+$/i.test(inputValue)) {
-
+            e.target.classList.remove("wrong")
         }
-        else{
-
+        else if (!e.target.classList.contains("wrong")){
+            e.target.classList.add("wrong");
         }
     };
 
@@ -28,10 +30,10 @@ const ListCreator = ({title, placeholder, sendUserInput, typeIngredient}:listCre
         const inputValue = e.target.value;
 
         if (/^[a-z 0-9/]+$/i.test(inputValue)) {
-
+            e.target.classList.remove("wrong")
         }
-        else{
-
+        else if (!e.target.classList.contains("wrong")){
+            e.target.classList.add("wrong");
         }
     }
 
@@ -60,7 +62,7 @@ const ListCreator = ({title, placeholder, sendUserInput, typeIngredient}:listCre
     const displayInputFields = () => {
         const displayInputField = () => {
             if(typeIngredient) {
-                return <div id="ingDiv">
+                return <div key={numInputFields + Math.random()} id="ingDiv">
                     <input
                     id="lcInput"
                     type="text"
@@ -82,7 +84,7 @@ const ListCreator = ({title, placeholder, sendUserInput, typeIngredient}:listCre
                 />
                 </div>
             } else {
-                return <input
+                return <input key={numInputFields + Math.random()}
                     id="lcInput"
                     type="text"
                     required

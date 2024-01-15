@@ -44,9 +44,13 @@
     width: 70%;
     height: 40%;
     font-size: 30px;
-    outline: none;
+    outline: transparent;
 }
 
 #tiInput:hover{
     opacity: 0.7;
+}
+
+.wrong{
+    color:red;
 }

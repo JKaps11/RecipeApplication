@@ -24,6 +24,10 @@ const CreateRecipes = () => {
     const [recipeIngredients, setRecipeIngredients] = useState(Array<Ingredient>);
     const [recipeInstructions, setRecipeInstructions] = useState(Array<string>);
 
+    const handleSubmit = () => {
+
+    }
+
     return (<div id="createRecipesLayout">
         <form id="createRecipesForm">
             <TextInput title="Enter The Name of Your Recipe" placeholder="Recipe Name" sendUserInput={setRecipeName} paragraph={false}/>
