@@ -1,28 +1,28 @@
 import React from "react";
 import "../styling/textinput.css"
 
-interface textInputProps{
+interface numberInputProps{
     title: string
     placeholder: string
     sendUserInput: (input:string, val:any) => void
-    paragraph:boolean
     type: string
 }
 
-const TextInput = ({title, placeholder, sendUserInput, paragraph, type}:textInputProps) => {
+const NumberInput = ({title, placeholder, sendUserInput, type}:numberInputProps) => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
 
         const inputValue = e.target.value;
+        const validValues: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10]
 
-        if (/^[a-z ',-]+$/i.test(inputValue)) {
-            e.target.classList.remove("wrong")
+        if (validValues.includes(parseInt(inputValue))){
+            e.target.classList.remove("wrong");
             sendUserInput(type, inputValue);
-        }
-        else if (!e.target.classList.contains("wrong")){
+        } else if (!e.target.classList.contains("wrong")) {
             e.target.classList.add("wrong");
         }
+
     };
 
     return <div id="tiFormDiv">
@@ -31,15 +31,15 @@ const TextInput = ({title, placeholder, sendUserInput, paragraph, type}:textInpu
         </div>
         <div id="inputFieldDiv">
             <input id="tiInput"
-                type="text"
-                required
-                name="input"
-                maxLength={paragraph ? 200 : 20}
-                placeholder={placeholder}
-                onChange={(e) => handleChange(e)}
+                   type="number"
+                   required
+                   name="input"
+                   maxLength={2}
+                   placeholder={placeholder}
+                   onChange={(e) => handleChange(e)}
             />
         </div>
     </div>
 }
 
-export default TextInput;
+export default NumberInput;

@@ -1,127 +1,137 @@
-import React, {useState} from "react";
-import "../styling/listcreator.css"
-interface listCreatorProps{
-    title:string
-    placeholder: string
-    sendUserInput:(arr:Array<any>) => void
-    typeIngredient:boolean
+import React, { useEffect, useState } from "react";
+import "../styling/listcreator.css";
+
+interface listCreatorProps {
+    title: string;
+    placeholder: string;
+    sendUserInput: (input: string, val: any) => void;
+    typeIngredient: boolean;
+    type: string;
 }
 
-const ListCreator = ({title, placeholder, sendUserInput, typeIngredient}:listCreatorProps)=> {
-    const [numInputFields, setNumInputFields] = useState(1);
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+const ListCreator = ({ title, placeholder, sendUserInput, typeIngredient, type }: listCreatorProps) => {
+    const [inputList, setInputList] = useState<Array<{ input: string; amount?: string }>>([
+        { input: "" },
+    ]);
+
+    useEffect(() => {
+        console.log(inputList);
+        sendUserInput(type, inputList);
+    }, [inputList]);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
         e.preventDefault();
 
         const inputValue = e.target.value;
 
-        //makes text red if the user doesn't enter an invalid input
-        //will remove it when the user fixes it
-        if (/^[a-z -]+$/i.test(inputValue)) {
-            e.target.classList.remove("wrong")
-        }
-        else if (!e.target.classList.contains("wrong")){
+        // Allow empty input when deleting
+        if (inputValue === "" || /^[a-zA-Z -]+$/.test(inputValue)) {
+            e.target.classList.remove("wrong");
+            // Update the corresponding element in the list
+            setInputList((prevInputList) => {
+                const updatedList = [...prevInputList];
+                updatedList[index] = { ...updatedList[index], input: inputValue };
+                return updatedList;
+            });
+        } else {
             e.target.classList.add("wrong");
         }
     };
 
-    const handleChangeNum = (e: React.ChangeEvent<HTMLInputElement>) => {
-        e.preventDefault()
+    const handleChangeNum = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+        e.preventDefault();
 
         const inputValue = e.target.value;
 
-        if (/^[a-z 0-9/]+$/i.test(inputValue)) {
-            e.target.classList.remove("wrong")
-        }
-        else if (!e.target.classList.contains("wrong")){
+        // Allow empty input when deleting
+        if (inputValue === "" || /^[a-zA-Z 0-9/]+$/.test(inputValue)) {
+            e.target.classList.remove("wrong");
+            // Update the corresponding element in the list
+            setInputList((prevInputList) => {
+                const updatedList = [...prevInputList];
+                updatedList[index] = { ...updatedList[index], amount: inputValue };
+                return updatedList;
+            });
+        } else {
             e.target.classList.add("wrong");
         }
-    }
+    };
 
-    const addInputField = (e:React.MouseEvent<HTMLButtonElement>) =>{
-        e.preventDefault();
-        if(numInputFields === 15){
-            alert("max amount of ingredients reached")
-        }
-        else {
-            const val = numInputFields + 1;
-            setNumInputFields(val);
-        }
-    }
 
-    const removeInputField = (e:React.MouseEvent<HTMLButtonElement>) =>{
+    const addInputField = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        if(numInputFields === 1){
-            alert("lowest amount of ingredients reached")
+        if (inputList.length === 15) {
+            alert("max amount of ingredients reached");
+        } else {
+            setInputList((prevInputList) => [...prevInputList, { input: "" }]);
         }
-        else{
-            const val = numInputFields - 1;
-            setNumInputFields(val);
+    };
+
+    const removeInputField = (e: React.MouseEvent<HTMLButtonElement>, index: number) => {
+        e.preventDefault();
+        if (inputList.length === 1) {
+            alert("lowest amount of ingredients reached");
+        } else {
+            setInputList((prevInputList) => {
+                const updatedList = [...prevInputList];
+                updatedList.splice(index, 1);
+                return updatedList;
+            });
         }
-    }
+    };
 
     const displayInputFields = () => {
-        const displayInputField = () => {
-            if(typeIngredient) {
-                return <div key={numInputFields + Math.random()} id="ingDiv">
-                    <input
-                    id="lcInput"
-                    type="text"
-                    required
-                    name="input"
-                    maxLength={20}
-                    placeholder={placeholder}
-                    onChange={(e) => handleChange(e)}
-                />
-                    <h2 id="lcTitle">:</h2>
+        return inputList.map((input, index) => (
+            <div key={index} id="ingDiv">
                 <input
                     id="lcInput"
                     type="text"
                     required
                     name="input"
                     maxLength={20}
-                    placeholder="Amount"
-                    onChange={(e) => handleChangeNum(e)}
-                />
-                </div>
-            } else {
-                return <input key={numInputFields + Math.random()}
-                    id="lcInput"
-                    type="text"
-                    required
-                    name="input"
-                    maxLength={20}
                     placeholder={placeholder}
-                    onChange={(e) => handleChange(e)}
+                    value={input.input}
+                    onChange={(e) => handleChange(e, index)}
                 />
-            }
-        };
-
-        const inputFields = [];
-
-        for (let i = 0; i < numInputFields; i++) {
-            inputFields.push(displayInputField());
-        }
-
-        return inputFields;
+                {typeIngredient && (
+                    <>
+                        <h2 id="lcTitle">:</h2>
+                        <input
+                            id="lcInput"
+                            type="text"
+                            required
+                            name="input"
+                            maxLength={20}
+                            placeholder="Amount"
+                            value={input.amount || ""}
+                            onChange={(e) => handleChangeNum(e, index)}
+                        />
+                    </>
+                )}
+                {index > 0 && (
+                    <button id="crButton" onClick={(e) => removeInputField(e, index)}>
+                        remove
+                    </button>
+                )}
+            </div>
+        ));
     };
 
-
-    return <div id="lcFormDiv">
-        <div id="lcTitleDiv">
-        <h2 id="lcTitle">{title}</h2>
-        </div>
-        <div id="lcInputField">
-            {displayInputFields()}
-            <div id="lcButtons">
-                <button id="crButton" onClick={(e) => addInputField(e)}>
-                    add
-                </button>
-                <button id="crButton" onClick={(e) => removeInputField(e)}>
-                    remove
-                </button>
+    return (
+        <div id="lcFormDiv">
+            <div id="lcTitleDiv">
+                <h2 id="lcTitle">{title}</h2>
+            </div>
+            <div id="lcInputField">
+                {displayInputFields()}
+                <div id="lcButtons">
+                    <button id="crButton" onClick={(e) => addInputField(e)}>
+                        add
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-}
+    );
+};
 
 export default ListCreator;
