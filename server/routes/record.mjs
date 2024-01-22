@@ -24,11 +24,14 @@ router.get("/:id", async (req, res) => {
 // This section will help you create a new record.
 router.post("/", async (req, res) => {
   let newDocument = {
-    name: req.body.name,
-    position: req.body.position,
-    level: req.body.level,
+    Name: req.body.Name,
+    Culinary_Type: req.body.Culinary_Type,
+    Description: req.body.Description,
+    Rating: req.body.Rating,
+    Ingredients:  req.body.Ingredients,
+    Instructions: req.body.Instructions,
   };
-  let collection = await db.collection("records");
+  let collection = await db.collection("RecipeCollection");
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
 });

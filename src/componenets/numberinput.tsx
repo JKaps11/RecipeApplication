@@ -26,10 +26,6 @@ const NumberInput = ({title, placeholder, sendUserInput, type}:numberInputProps)
     };
 
     return <div id="tiFormDiv">
-        <div id="tiTitleDiv">
-            <h2 id="tiTitle">{title}</h2>
-        </div>
-        <div id="inputFieldDiv">
             <input id="tiInput"
                    type="number"
                    required
@@ -38,7 +34,6 @@ const NumberInput = ({title, placeholder, sendUserInput, type}:numberInputProps)
                    placeholder={placeholder}
                    onChange={(e) => handleChange(e)}
             />
-        </div>
     </div>
 }
 

@@ -16,7 +16,7 @@ const TextInput = ({title, placeholder, sendUserInput, paragraph, type}:textInpu
 
         const inputValue = e.target.value;
 
-        if (/^[a-z ',-]+$/i.test(inputValue)) {
+        if (/^[a-z ',.-]+$/i.test(inputValue)) {
             e.target.classList.remove("wrong")
             sendUserInput(type, inputValue);
         }
@@ -26,19 +26,20 @@ const TextInput = ({title, placeholder, sendUserInput, paragraph, type}:textInpu
     };
 
     return <div id="tiFormDiv">
-        <div id="tiTitleDiv">
-            <h2 id="tiTitle">{title}</h2>
-        </div>
-        <div id="inputFieldDiv">
-            <input id="tiInput"
+            {paragraph ? <textarea id="tiTextArea"
+                placeholder={placeholder}
+                                   cols={55}
+                                   rows={3}
+                /> :
+                <input id="tiInput"
                 type="text"
                 required
                 name="input"
-                maxLength={paragraph ? 200 : 20}
+                maxLength={20}
                 placeholder={placeholder}
                 onChange={(e) => handleChange(e)}
             />
-        </div>
+            }
     </div>
 }
 

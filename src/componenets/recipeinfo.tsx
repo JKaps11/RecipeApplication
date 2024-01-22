@@ -1,20 +1,8 @@
 import React from "react";
-import StarsRating from "./ratingstars";
 import "../styling/recipeinfo.css";
+import {Ingredient, Recipe} from "../customTypes";
 
-type Ingredient = {
-    Name: string;
-    Amount: string;
-}
 
-type Recipe = {
-    Name: string;
-    Culinary_Type: string;
-    Description: string;
-    Rating: number;
-    Ingredients: Array<Ingredient>;
-    Instructions: Array<string>;
-}
 interface recipeInfoProps{
     recipe:Recipe | undefined;
 }

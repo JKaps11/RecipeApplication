@@ -1,20 +1,8 @@
 import React from "react";
 import StarsRating from "./ratingstars";
 import "../styling/recipecard.css";
+import {Recipe} from "../customTypes";
 
-type Ingredient = {
-    Name: string;
-    Amount: string;
-}
-
-type Recipe = {
-    Name: string;
-    Culinary_Type: string;
-    Description: string;
-    Rating: number;
-    Ingredients: Array<Ingredient>;
-    Instructions: Array<string>;
-}
 interface recipeCardProps{
     recipe:Recipe;
     clickMethod:(r:Recipe) => void;

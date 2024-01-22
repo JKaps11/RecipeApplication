@@ -26,7 +26,7 @@
     width: 80%;
     height: 600px;
     min-height: 600px;
-    background-color: #1d475c;
+    background-color: var(--main-accent2-color);
     border-radius: 30px;
 }
 

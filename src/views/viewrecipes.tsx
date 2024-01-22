@@ -2,20 +2,8 @@ import React, {useEffect, useState} from "react";
 import RecipeCard from "../componenets/recipecard";
 import RecipeInfo from "../componenets/recipeinfo";
 import "../styling/viewrecipes.css"
+import {Recipe} from "../customTypes";
 
-type Ingredient = {
-    Name: string;
-    Amount: string;
-}
-
-type Recipe = {
-    Name: string;
-    Culinary_Type: string;
-    Description: string;
-    Rating: number;
-    Ingredients: Array<Ingredient>;
-    Instructions: Array<string>;
-}
 const ViewRecipes = () => {
 
     const [recipeList, setRecipeList] = useState<Array<Recipe>>();
