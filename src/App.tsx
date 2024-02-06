@@ -13,6 +13,7 @@ import {useAuth0} from "@auth0/auth0-react";
 import MenuLayout from "./views/menulayout";
 import MenuRecipeEditor from "./views/menurecipeeditor";
 import Settings from "./views/settings";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
 
 function App() {
@@ -23,7 +24,10 @@ function App() {
         setShowDropDownMenu(prevState => !prevState);
     };
 
-    return <div id='appformat'>
+    const queryClient = new QueryClient();
+
+    return (<QueryClientProvider client={queryClient}>
+    <div id='appformat'>
         <BrowserRouter>
             <div id="navbar">
                 <Navbar showDropDownMenu={showDropDownMenu} clickMenuIcon={clickMenuIcon}/>
@@ -49,7 +53,9 @@ function App() {
             </div>
             </div>
         </BrowserRouter>
-    </div>;
+    </div>
+</QueryClientProvider>
+);
 }
 
 export default App;

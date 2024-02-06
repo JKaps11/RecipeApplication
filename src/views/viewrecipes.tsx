@@ -10,7 +10,6 @@ const ViewRecipes = () => {
     const [showRecipeInfo, setShowRecipeInfo] = useState<boolean>(false);
     const [currRecipe, setCurrRecipe] = useState<Recipe>();
 
-
     //Function passed down to change state and activate recipe info component
     //Function activates when recipe card is clicked
     const viewRecipeInfo = (r:Recipe) => {

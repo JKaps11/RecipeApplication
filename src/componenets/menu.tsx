@@ -2,6 +2,7 @@ import React, {ReactNode} from "react";
 import {useNavigate} from "react-router-dom";
 import '../styling/menu.css';
 import LogoutButton from "./logoutbutton";
+import {useAuth0} from "@auth0/auth0-react";
 
 type MenuOption = {
     name: string;
@@ -10,6 +11,7 @@ type MenuOption = {
 const Menu = () => {
 
     const navigate = useNavigate();
+    const { loginWithRedirect, isAuthenticated } = useAuth0();
 
     const menuOptions: Array<MenuOption> = [
         {
@@ -36,8 +38,9 @@ const Menu = () => {
 
     const displayMenuOptions = (mos: Array<MenuOption>) :ReactNode =>{
         return mos.map((mo: MenuOption) => {
-            return <button key={mo.name} id="menuOptionButton" onClick={() => navigate(mo.path)}>{mo.name}</button>;
-        });
+            return isAuthenticated ? <button key={mo.name} id="menuOptionButton" onClick={() => navigate(mo.path)}>{mo.name}</button>:
+                <button key={mo.name} id="menuOptionButton" onClick={() => loginWithRedirect()}>{mo.name}</button>;
+                    });
     }
 
     return <div id="menuFormat">
