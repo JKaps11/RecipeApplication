@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import RecipeCard from "../componenets/recipecard";
 import RecipeInfo from "../componenets/recipeinfo";
+import {FieldValues, useForm} from "react-hook-form";
 import "../styling/viewrecipes.css"
 import {Recipe} from "../customTypes";
 
@@ -9,13 +10,16 @@ const ViewRecipes = () => {
     const [recipeList, setRecipeList] = useState<Array<Recipe>>();
     const [showRecipeInfo, setShowRecipeInfo] = useState<boolean>(false);
     const [currRecipe, setCurrRecipe] = useState<Recipe>();
+    const [recipeToSearch, setRecipeToSearch] = useState("");
 
     //Function passed down to change state and activate recipe info component
     //Function activates when recipe card is clicked
     const viewRecipeInfo = (r:Recipe) => {
         setCurrRecipe(r);
-        setShowRecipeInfo(true);
-    }
+        setShowRecipeInfo(true);}
+
+
+    const { register, handleSubmit} = useForm();
 
     useEffect(() =>{
         async function fetchRecipes() {
@@ -42,7 +46,7 @@ const ViewRecipes = () => {
 
         }
         else{
-            return recipeList?.map((recipe:Recipe) => {
+            return recipeList?.filter((recipe:Recipe) => recipe.Name.includes(recipeToSearch)).map((recipe:Recipe) => {
                 return(
                     <RecipeCard recipe={recipe} clickMethod={viewRecipeInfo} key={recipe.Name}/>
                 );
@@ -52,10 +56,19 @@ const ViewRecipes = () => {
 
     return showRecipeInfo ? <RecipeInfo recipe={currRecipe}/>
         :<div id="viewRecipesLayout">
-            <div id="searchDiv"></div>
+            <div id="searchDiv">
+                <form id="recipeSearchForm" onSubmit={handleSubmit((e)=> e.preventDefault)}>
+                    <div id="recipeSearchDiv">
+                        <input
+                            id="recipeSearchInput"
+                            {...register('nameToSearch', {required: true})}
+                        />
+                    </div>
+                </form>
+            </div>
             <div id="recipesDiv">
                 <div id="recipesLayout">
-                {displayRecipes()}
+                    {displayRecipes()}
                 </div>
             </div>
             </div>

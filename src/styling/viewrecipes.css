@@ -15,6 +15,36 @@
     width: 90%;
     background-color: var(--main-accent2-color);
 }
+
+#recipeSearchForm{
+    height: 100%;
+    width: 100%;
+}
+
+#recipeSearchDiv{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#recipeSearchInput{
+    text-align: center;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 8px 8px -4px var(--main-background-color);
+    width: 90%;
+    height: 50%;
+    font-size: 20px;
+    outline: transparent;
+}
+
+#recipeSearchInput:hover{
+    opacity: 0.7;
+}
+
 #recipesLayout{
     padding-top: 2%;
     padding-bottom: 2%;

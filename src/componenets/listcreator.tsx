@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../styling/listcreator.css";
 
 interface listCreatorProps {
-    title: string;
     placeholder: string;
     sendUserInput: (input: string, val: any) => void;
     typeIngredient: boolean;
     type: string;
 }
 
-const ListCreator = ({ title, placeholder, sendUserInput, typeIngredient, type }: listCreatorProps) => {
+const ListCreator = ({placeholder, sendUserInput, typeIngredient, type }: listCreatorProps) => {
     const [inputList, setInputList] = useState<Array<{ input: string; amount?: string }>>([
         { input: "" },
     ]);
@@ -119,9 +118,6 @@ const ListCreator = ({ title, placeholder, sendUserInput, typeIngredient, type }
 
     return (
         <div id="lcFormDiv">
-            <div id="lcTitleDiv">
-                <h2 id="lcTitle">{title}</h2>
-            </div>
             <div id="lcInputField">
                 {displayInputFields()}
                 <div id="lcButtons">
