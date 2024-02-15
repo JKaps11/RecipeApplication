@@ -9,9 +9,8 @@ import Navbar from "./componenets/navbar";
 import Menu from "./componenets/menu";
 import ViewRecipes from "./views/viewrecipes";
 import CreateRecipes from "./views/createrecipes";
+import GroceryLists from "./views/grocerylists";
 import {useAuth0} from "@auth0/auth0-react";
-import MenuLayout from "./views/menulayout";
-import MenuRecipeEditor from "./views/menurecipeeditor";
 import Settings from "./views/settings";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
@@ -45,8 +44,7 @@ function App() {
                             <Route path='/profile' element={<AccountPage/>}/>
                             <Route path='/viewrecipes' element={<ViewRecipes/>}/>
                             <Route path='/createrecipes' element={<CreateRecipes/>}/>
-                            <Route path='/menulayout' element={<MenuLayout/>}/>
-                            <Route path='/menurecipeeditor' element={<MenuRecipeEditor/>}/>
+                            <Route path='/grocerylists' element = {<GroceryLists/>}/>
                             <Route path='/settings' element={<Settings/>}/>
                         </>}
                 </Routes>

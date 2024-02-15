@@ -8,6 +8,7 @@ type MenuOption = {
     name: string;
     path: string;
 }
+
 const Menu = () => {
 
     const navigate = useNavigate();
@@ -23,12 +24,8 @@ const Menu = () => {
             path:"createrecipes"
         },
         {
-            name:"Menu Layout Editor",
-            path:"menulayout"
-        },
-        {
-            name:"Menu Recipe Editor",
-            path:"menurecipeeditor"
+            name:"Grocery Lists",
+            path:"grocerylists"
         },
         {
             name:"Settings",
