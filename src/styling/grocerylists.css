@@ -1,0 +1,51 @@
+#groceryListLayout{
+    height: 100%;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#groceryListTop{
+    height: 25%;
+    width: 100%;
+    border-bottom: 4px solid var(--main-accent-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#groceryListButtonDiv{
+    height: 100%;
+    width: 10%;
+}
+
+#groceryListAddButton{
+    background-color: var(--main-accent-color);
+    background-image: url("../assets/plus.svg");
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    align-self: center;
+}
+
+#groceryListTopRight{
+    height: 100%;
+    width: 90%;
+}
+
+#groceryListBody{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#gListEntryButton{
+    height: 30px;
+    width: 100%;
+    background: transparent;
+    border-bottom: 2px solid var(--main-txt-color);
+}
