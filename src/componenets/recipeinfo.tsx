@@ -14,7 +14,7 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
         }
         else{
             return ingredients?.map((ingredient:Ingredient) => {
-                return <li id="ritext2" key={ingredient.Name}>{ingredient.Name}: {ingredient.Amount}</li>
+                return <li id="ritext2" key={ingredient.Name}>{ingredient.Name}: {ingredient.Amount_Num} {ingredient.Amount_Type}</li>
             })
         }
     };

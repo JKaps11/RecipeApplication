@@ -87,21 +87,34 @@ const CreateRecipes = () => {
             return inputList.map((input, index) => (
                 <div key={index} id="createRecipesFormDiv1">
                     <div id="insideList">
-                    <input
-                        id="createRecipesTextInput"
-                        className="listInput"
-                        type="text"
-                        {...register(`Ingredients.${index}.Name`, {required: true, maxLength: 25, pattern: /^[A-Za-z]+$/i})}
-                        placeholder="Ingredient"
-                    />
-                    <h2 id="crListText">:</h2>
-                    <input
-                        style={{width:"20%"}}
-                        id="createRecipesTextInput"
-                        className="listInput"
-                        type="text"
-                        {...register(`Ingredients.${index}.Amount`, {required: true, maxLength: 25, pattern: /^[A-Za-z0-9]+$/i})}
-                        placeholder="Amount"/>
+                        <input
+                            style={{width:"70%"}}
+                            id="createRecipesTextInput"
+                            className="listInput"
+                            type="text"
+                            {...register(`Ingredients.${index}.Name`, {required: true, maxLength: 25, pattern: /^[A-Za-z]+$/i})}
+                            placeholder="Ingredient"/>
+                        <h2 id="crListText">:</h2>
+                        <input
+                            style={{width:"10%"}}
+                            id="createRecipesTextInput"
+                            className="listInput"
+                            type="text"
+                            {...register(`Ingredients.${index}.Amount_Num`, {required: true, maxLength: 25, pattern: /^[0-9]+$/i})}
+                            placeholder="Amount #"/>
+                            {/*Make a custom validation message telling the user that they need to enter a decimal not a fraction*/}
+
+                        <input list="amountTypes"
+                            id="amountTypesInput"
+                               placeholder="Amount Type"
+                               className="listInput"
+                        />
+
+                        <datalist id="amountTypes">
+                            <option value="tsp"/>
+                            <option value="tbsp"/>
+                            <option value="cup"/>
+                        </datalist>
                     </div>
                     <div id="buttonInsideList">
                         {index > 0 && (

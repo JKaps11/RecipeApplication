@@ -1,8 +1,14 @@
+export enum Amount_Types{
+    tbsp,
+    tsp,
+    cup,
+    pinch
+}
+
 export type Ingredient = {
     Name: string;
-    Amount: string;
-  //Amount_Num: number;  
-  //Amount_Type: string;
+    Amount_Num: number;
+    Amount_Type: Amount_Types;
 }
 
 export type Recipe = {
