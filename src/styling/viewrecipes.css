@@ -11,9 +11,10 @@
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
-    height: 20%;
+    height: 15%;
     width: 90%;
-    background-color: var(--main-accent2-color);
+    border: 5px solid var(--main-accent-color);
+    box-shadow: 0 8px 20px -4px var(--main-accent2-color);
 }
 
 #recipeSearchForm{
@@ -37,8 +38,10 @@
     box-shadow: 0 8px 8px -4px var(--main-background-color);
     width: 90%;
     height: 50%;
-    font-size: 20px;
+    font-size: 25px;
     outline: transparent;
+    background-color: var(--main-accent-color);
+    color: white;
 }
 
 #recipeSearchInput:hover{
@@ -59,9 +62,10 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
-    height: 80%;
+    height: 85%;
     width: 90%;
     column-gap: 30px;
     row-gap: 30px;
-    background-color: var(--main-accent2-color);
+    border: 5px solid var(--main-accent-color);
+    box-shadow: 0 8px 20px -4px var(--main-accent2-color);
 }

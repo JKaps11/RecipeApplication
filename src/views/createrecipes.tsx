@@ -2,7 +2,7 @@ import React, {useRef, useState} from "react";
 import "../styling/createrecipes.css";
 import CustomDialog from "../componenets/customdialog";
 import {Ingredient, Recipe} from "../customTypes";
-import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
+import {SubmitHandler, useForm} from "react-hook-form";
 
 enum crState {
     Information = 0,
@@ -91,9 +91,7 @@ const CreateRecipes = () => {
                         id="createRecipesTextInput"
                         className="listInput"
                         type="text"
-                        required
-                        name="input"
-                        maxLength={20}
+                        {...register(`Ingredients.${index}.Name`, {required: true, maxLength: 25, pattern: /^[A-Za-z]+$/i})}
                         placeholder="Ingredient"
                     />
                     <h2 id="crListText">:</h2>
@@ -102,8 +100,7 @@ const CreateRecipes = () => {
                         id="createRecipesTextInput"
                         className="listInput"
                         type="text"
-                        required
-                        maxLength={20}
+                        {...register(`Ingredients.${index}.Amount`, {required: true, maxLength: 25, pattern: /^[A-Za-z0-9]+$/i})}
                         placeholder="Amount"/>
                     </div>
                     <div id="buttonInsideList">
@@ -123,9 +120,7 @@ const CreateRecipes = () => {
                                 id="createRecipesTextInput"
                                 className="listInput"
                                 type="text"
-                                required
-                                name="input"
-                                maxLength={20}
+                                {...register(`Instructions.${index}`, {required: true, maxLength: 25, pattern: /^[A-Za-z0-9]+$/i})}
                                 placeholder="Instruction"
                             />
                         </div>
@@ -157,7 +152,7 @@ const CreateRecipes = () => {
         Ingredients: Array<Ingredient>,
         Instructions: Array<string>,
     }
-    const {register, handleSubmit} = useForm<RecipeForm>();
+    const {register, handleSubmit, formState} = useForm<RecipeForm>();
 
     const [recipeToPost, setRecipeToPost] = useState<Recipe>({
         Name: "",
@@ -213,23 +208,23 @@ const CreateRecipes = () => {
                 <div id="createRecipesFormDiv0">
                     <input id="createRecipesTextInput"
                            placeholder="Recipe Name"
-                           {...register("Name")}/>
+                           {...register("Name", {required: true, maxLength: 30, pattern: /^[A-Za-z]+$/i})}/>
                 </div>
                 <div id="createRecipesFormDiv0">
-                    <label id="createRecipesFormLabel">Recipe Rating (1-10): {recipeToPost.Rating}</label>
+                    <label id="createRecipesFormLabel">Recipe Rating (1-10): {}</label>
                     <input id="createRecipesRangeInput"
                         type="range" min="0" max="10"
-                           {...register("Rating")}/>
+                           {...register("Rating", {required: true, min: 0, max: 10})}/>
                 </div>
                 <div id="createRecipesFormDiv0">
                     <input id="createRecipesTextInput"
                            placeholder="Culinary Type (American, French, Japanese)"
-                           {...register("Culinary_Type")}/>
+                           {...register("Culinary_Type", {required: true, maxLength: 20, pattern: /^[A-Za-z]+$/i})}/>
                 </div>
                 <div id="createRecipesFormDiv0">
                     <textarea id="createRecipesTextArea"
                               placeholder="Description"
-                              {...register("Description")}/>
+                              {...register("Description", {required: true, maxLength: 100, pattern: /^[A-Za-z0-9.]+$/i})}/>
                 </div>
             </>
         } else if (crFormState === 1) {
