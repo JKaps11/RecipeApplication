@@ -1,5 +1,4 @@
 import React from "react";
-import StarsRating from "./ratingstars";
 import "../styling/recipecard.css";
 import {Recipe} from "../customTypes";
 
@@ -11,12 +10,13 @@ interface recipeCardProps{
 
 const RecipeCard = ({recipe, clickMethod}:recipeCardProps) => {
 
-
-
     return<button id="recipecardbutton" onClick={() => clickMethod(recipe)}>
         <div id="recipecardlayout">
-            <div id="recipecardstars">
-                <StarsRating rating={recipe.Rating}/>
+            <div id="recipecardrating">
+                <div className="range">
+                    <div className="fill" style={{width:`${recipe.Rating*10}%`}}>
+                    </div>
+                </div>
             </div>
             <div>
                 <h2 id="recipecardname">{recipe.Name}</h2>
