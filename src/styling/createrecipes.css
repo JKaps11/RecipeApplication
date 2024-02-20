@@ -63,7 +63,8 @@
 
 #createRecipesFormDiv0{
     width: 100%;
-    height: 90px;
+    min-height: 90px;
+    height: fit-content;
     flex: auto;
     display: flex;
     flex-direction: column;
@@ -286,4 +287,81 @@
 #createRecipesForm{
     width: 100%;
     height: 100%;
+}
+
+.container {
+    margin-top: 20px;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 5px;
+    background-color: var(--main-accent2-color);
+}
+
+.header {
+    flex: 1;
+    width: 100%;
+    border: 2px dashed var(--main-accent-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.header svg {
+    height: 100px;
+}
+
+.header p {
+    text-align: center;
+    color: var(--main-accent-color);
+}
+
+.footer {
+    background-color: var(--main-accent2-color);
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: var(--main-txt-color);
+    border: none;
+}
+
+.footer svg {
+    height: 130%;
+    fill: var(--main-accent-color);
+    background-color: var(--main-background-color);
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.205);
+}
+
+.footer p {
+    flex: 1;
+    text-align: center;
+}
+
+.footer:hover{
+    background-color: var(--main-background-color);
+}
+
+#file {
+    display: none;
+}
+#createRecipesSubmitDiv{
+    margin-top: 20px;
+    align-self: center;
 }

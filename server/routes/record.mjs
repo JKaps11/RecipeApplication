@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   res.send(results).status(200);
 });
 
-// This section will help you get a single record by id
+// This section will help you get a single record by idx3333333333343333
 router.get("/:id", async (req, res) => {
   let collection = await db.collection("records");
   let query = {_id: new ObjectId(req.params.id)};
@@ -30,6 +30,7 @@ router.post("/", async (req, res) => {
     Rating: req.body.Rating,
     Ingredients:  req.body.Ingredients,
     Instructions: req.body.Instructions,
+    Image: req.body.Image.b
   };
   let collection = await db.collection("RecipeCollection");
   let result = await collection.insertOne(newDocument);
