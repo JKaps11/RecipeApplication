@@ -166,14 +166,14 @@ const CreateRecipes = () => {
         Rating: number,
         Ingredients: Array<Ingredient>,
         Instructions: Array<string>,
-        Image: File,
+        Image: FileList,
     }
     const {register, handleSubmit, watch, formState, getValues} = useForm<RecipeForm>({
         defaultValues: {Rating: 0}
     });
 
     const watchRating = watch("Rating")
-    const watchImage = watch(["Image"])
+    const watchImage = watch("Image")
     const [filePreview] = useFilePreview(watchImage);
 
     const submitCreateRecipeForm: SubmitHandler<RecipeForm> = (data) => {
@@ -243,7 +243,7 @@ const CreateRecipes = () => {
                                 <path d="M18.153 6h-.009v5.342H23.5v-.002z"></path>
                             </g>
                         </svg>
-                        <p>"No Chosen File"</p>
+                        <p>{(filePreview) ? watchImage[0]?.name : "No File Chosen" }</p>
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                             <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>

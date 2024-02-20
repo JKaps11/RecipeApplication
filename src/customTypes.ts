@@ -18,7 +18,7 @@ export type Recipe = {
     Rating: number;
     Ingredients: Array<Ingredient>;
     Instructions: Array<string>;
-    Image: File;
+    Image: FileList;
 }
 
 export type GroceryList = {
