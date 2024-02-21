@@ -39,7 +39,7 @@ function App() {
                     <Route path='/' element={<HomePage/>}/>
                     <Route path='/features' element={<FeaturesPage/>}/>
                     <Route path='/about' element={<AboutPage/>}/>
-                    {isAuthenticated &&
+                    {isAuthenticated === false &&
                         <>
                             <Route path='/profile' element={<AccountPage/>}/>
                             <Route path='/viewrecipes' element={<ViewRecipes/>}/>

@@ -106,6 +106,20 @@
 #panel2{
     width: 100%;
     min-height: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     background: rgb(29,71,92);
     background: linear-gradient(0deg, rgba(29,71,92,1) 0%, rgba(1,121,111,1) 50%, rgba(29,71,92,1) 100%);
 }
+
+#panel2Div{
+    width: 33%;
+    height: 100%;
+    display: felx;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

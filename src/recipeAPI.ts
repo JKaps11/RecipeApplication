@@ -1,7 +1,22 @@
 import {Recipe} from "./customTypes";
 
+const convertToBase64 = (file: File) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
 export async function postRecipestoDB(recipe: Recipe) {
     try {
+        const imgBinary = convertToBase64(recipe.Image[0])  
+
         const response = await fetch("http://localhost:5000/record/", {
             method: "POST",
             body: JSON.stringify({
@@ -11,13 +26,13 @@ export async function postRecipestoDB(recipe: Recipe) {
                 Rating: recipe.Description,
                 Ingredients: recipe.Ingredients,
                 Instructions: recipe.Instructions,
-                Image: recipe.Image
+                Image: imgBinary
             }),
             headers: {
                 "Content-Type": "application/json"
             }
         });
-
+        
         if (!response.ok) {
             throw new Error("Failed to Upload Recipe") ;
         }

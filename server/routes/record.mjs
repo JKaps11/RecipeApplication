@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
     Rating: req.body.Rating,
     Ingredients:  req.body.Ingredients,
     Instructions: req.body.Instructions,
-    Image: req.body.Image.b
+    Image: req.body.Image
   };
   let collection = await db.collection("RecipeCollection");
   let result = await collection.insertOne(newDocument);

@@ -176,8 +176,7 @@ const CreateRecipes = () => {
     const watchImage = watch("Image")
     const [filePreview] = useFilePreview(watchImage);
 
-    const submitCreateRecipeForm: SubmitHandler<RecipeForm> = (data) => {
-        console.log(data)
+    const submitCreateRecipeForm: SubmitHandler<RecipeForm> = () => {
         dialogRef.current?.showModal();
     }
 
