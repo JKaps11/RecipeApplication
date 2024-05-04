@@ -23,30 +23,46 @@ const HomePage = () => {
             </div>
 
             <div id="panel2">
-              <div id="panel2Div">
-              <h2 id="homeTitle" style={{fontSize:"30px"}}>Create Recipes</h2>
-                <p id="homeText">
-                    A Helpful GUI that will guide the user through the stages of creating a recipe. 
-                    Contains information like rating, name, ingredients, instructions, and more! 
-                </p>
-              </div>
-              <div id="panel2Div">
-                <h2 id="homeTitle" style={{fontSize:"30px"}}>View Recipes</h2>
-                <p id="homeText">
-                    Search and sort through all the recipes you have created! Manage your recipes by selecting one of them,
-                    and the clicking either delete, or update!
-                </p>
-              </div>
-              <div id="panel2Div">
-                <h2 id="homeTitle" style={{fontSize:"30px"}}>Grocery List</h2>
-                <p id="homeText">
-                    Add the recipes that you want to buy ingredients for and the grocery list will automatically calculate the amount
-                    of an ingredient you need accross all the recipes you input!
-                </p>
-              </div>
+                <div id="panel2Div">
+                    <span id="whiteCircle">
+                        <img src={require("../assets/recipeList.png")} id="panel2Image" alt="menu"/>
+                    </span>
+                    <h2 id="homeTitle" style={{fontSize: "30px"}}>Create Recipes</h2>
+                    <p id="homeText">
+                        A Helpful GUI that will guide the user through the stages of creating a recipe.
+                        Contains information like rating, name, ingredients, instructions, and more!
+                    </p>
+
+                </div>
+                <div id="panel2Div">
+                    <span id="whiteCircle">
+                        <img src={require("../assets/menu.png")} id="panel2Image" alt="menu"/>
+                    </span>
+
+                    <h2 id="homeTitle" style={{fontSize: "30px"}}>View Recipes</h2>
+                    <p id="homeText">
+                        Search and sort through all the recipes you have created! Manage your recipes by selecting one
+                        of them,
+                        and the clicking either delete, or update!
+                    </p>
+
+                </div>
+                <div id="panel2Div">
+                    <span id="whiteCircle">
+                        <img src={require("../assets/groceryList.png")} id="panel2Image" alt="groceryList"/>
+                    </span>
+                    <h2 id="homeTitle" style={{fontSize: "30px"}}>Grocery List</h2>
+                    <p id="homeText">
+                        Add the recipes that you want to buy ingredients for and the grocery list will automatically
+                        calculate the amount
+                        of an ingredient you need accross all the recipes you input!
+                    </p>
+                </div>
             </div>
             <div id="panel1">
-                <div id="panelPictureDiv"></div>
+                <div style={{width:"70%"}} id="panelPictureDiv">
+                    <img alt="ingredients" id="panelThreePicture" src={require("../assets/helpMenu.PNG")}></img>
+                </div>
                 <div id="panelTitleDiv">
                     <h2 id="homeTitleTwo">Let's get Cooking!</h2>
                     <p id="homeText">

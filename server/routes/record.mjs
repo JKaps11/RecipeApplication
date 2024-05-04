@@ -5,8 +5,8 @@ import { ObjectId } from "mongodb";
 const router = express.Router();
 
 // This section will help you get a list of all the records.
-router.get("/", async (req, res) => {
-  let collection = await db.collection("RecipeCollection");
+router.post("/", async (req, res) => {
+  let collection = await db.collection(req.body.User_Id);
   let results = await collection.find({}).toArray();
   res.send(results).status(200);
 });
@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // This section will help you create a new record.
-router.post("/", async (req, res) => {
+router.post("/recipe", async (req, res) => {
   let newDocument = {
     Name: req.body.Name,
     Culinary_Type: req.body.Culinary_Type,
@@ -32,7 +32,7 @@ router.post("/", async (req, res) => {
     Instructions: req.body.Instructions,
     Image: req.body.Image
   };
-  let collection = await db.collection("RecipeCollection");
+  let collection = await db.collection(req.body.id);
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
 });

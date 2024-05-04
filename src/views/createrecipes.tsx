@@ -5,6 +5,7 @@ import {Ingredient, Recipe} from "../customTypes";
 import {postRecipestoDB} from "../recipeAPI";
 import {SubmitHandler, useForm} from "react-hook-form";
 import useFilePreview from "../componenets/useFilePreview";
+import {useAuth0} from "@auth0/auth0-react";
 
 enum crState {
     Information = 0,
@@ -56,7 +57,7 @@ const StatusBar = ({state}: {state: crState}) =>{
     </>
 }
 const CreateRecipes = () => {
-
+    const { user} = useAuth0();
     const ListInput = ({isIngredients}:{isIngredients: boolean}) => {
         const [inputList, setInputList] = useState<Array<{ input: string; amount?: string }>>([
             { input: "" },
@@ -181,7 +182,13 @@ const CreateRecipes = () => {
     }
 
     const handleContinue = () => {
-        postRecipestoDB(getValues()).then()
+        if(user && user.sub){
+            postRecipestoDB(getValues(), user.sub).then()
+        }
+        else{
+            // Can add some error messaging with react hook form later
+            console.log("you need to log in first");
+        }
         dialogRef.current?.close()
     }
 
@@ -219,7 +226,7 @@ const CreateRecipes = () => {
         else if(crFormState === 3){
             return <div id="createRecipesFormDiv0">
                 <div className="container">
-                    {(filePreview && typeof filePreview === "string") ? <img src={filePreview} alt="preview"/>
+                    {(filePreview) ? <img style={{maxHeight:"500px", maxWidth:"500px"}} src={filePreview as string} alt="preview"/>
                         : <div className="header">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>

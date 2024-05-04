@@ -12,7 +12,6 @@ import CreateRecipes from "./views/createrecipes";
 import GroceryLists from "./views/grocerylists";
 import {useAuth0} from "@auth0/auth0-react";
 import Settings from "./views/settings";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
 
 function App() {
@@ -23,9 +22,8 @@ function App() {
         setShowDropDownMenu(prevState => !prevState);
     };
 
-    const queryClient = new QueryClient();
 
-    return (<QueryClientProvider client={queryClient}>
+    return (
     <div id='appformat'>
         <BrowserRouter>
             <div id="navbar">
@@ -39,7 +37,7 @@ function App() {
                     <Route path='/' element={<HomePage/>}/>
                     <Route path='/features' element={<FeaturesPage/>}/>
                     <Route path='/about' element={<AboutPage/>}/>
-                    {isAuthenticated === false &&
+                    {isAuthenticated &&
                         <>
                             <Route path='/profile' element={<AccountPage/>}/>
                             <Route path='/viewrecipes' element={<ViewRecipes/>}/>
@@ -52,7 +50,6 @@ function App() {
             </div>
         </BrowserRouter>
     </div>
-</QueryClientProvider>
 );
 }
 

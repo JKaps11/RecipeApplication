@@ -35,7 +35,7 @@ const Menu = () => {
 
     const displayMenuOptions = (mos: Array<MenuOption>) :ReactNode =>{
         return mos.map((mo: MenuOption) => {
-            return isAuthenticated === false ? <button key={mo.name} id="menuOptionButton" onClick={() => navigate(mo.path)}>{mo.name}</button>:
+            return isAuthenticated ? <button key={mo.name} id="menuOptionButton" onClick={() => navigate(mo.path)}>{mo.name}</button>:
                 <button key={mo.name} id="menuOptionButton" onClick={() => loginWithRedirect()}>{mo.name}</button>;
                     });
     }

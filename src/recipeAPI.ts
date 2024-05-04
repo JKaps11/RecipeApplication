@@ -1,4 +1,5 @@
 import {Recipe} from "./customTypes";
+import { useAuth0 } from '@auth0/auth0-react';
 
 const convertToBase64 = (file: File) => {
     return new Promise((resolve, reject) => {
@@ -12,12 +13,11 @@ const convertToBase64 = (file: File) => {
       };
     });
   };
-
-export async function postRecipestoDB(recipe: Recipe) {
+export async function postRecipestoDB(recipe: Recipe, id:string) {
     try {
         const imgBinary = convertToBase64(recipe.Image[0])  
 
-        const response = await fetch("http://localhost:5000/record/", {
+        await fetch("http://localhost:5000/record/recipe", {
             method: "POST",
             body: JSON.stringify({
                 Name: recipe.Name,
@@ -31,12 +31,11 @@ export async function postRecipestoDB(recipe: Recipe) {
             headers: {
                 "Content-Type": "application/json"
             }
-        });
-        
-        if (!response.ok) {
-            throw new Error("Failed to Upload Recipe") ;
-        }
-        console.log(response.status);
+        }).then(response => {
+            if(!response.ok){
+                console.log(response.status);
+            }
+        })
 
     } catch (error) {
         let message;
