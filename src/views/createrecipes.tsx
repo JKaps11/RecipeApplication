@@ -2,7 +2,7 @@ import React, {useRef, useState} from "react";
 import "../styling/createrecipes.css";
 import CustomDialog from "../componenets/customdialog";
 import {Ingredient, Recipe} from "../customTypes";
-import {postRecipestoDB} from "../recipeAPI";
+import {postRecipe} from "../recipeAPI";
 import {SubmitHandler, useForm} from "react-hook-form";
 import useFilePreview from "../componenets/useFilePreview";
 import {useAuth0} from "@auth0/auth0-react";
@@ -162,6 +162,7 @@ const CreateRecipes = () => {
 
     type RecipeForm = {
         Name: string,
+        UserId: string,
         Culinary_Type: string,
         Description: string,
         Rating: number,
@@ -183,7 +184,20 @@ const CreateRecipes = () => {
 
     const handleContinue = () => {
         if(user && user.sub){
-            postRecipestoDB(getValues(), user.sub).then()
+
+            let formOutputs: RecipeForm = getValues()
+            let recipe: Recipe = {
+                Name: formOutputs.Name,
+                UserId: user.sub,
+                Culinary_Type: formOutputs.Culinary_Type,
+                Description: formOutputs.Description,
+                Ingredients: formOutputs.Ingredients,
+                Instructions: formOutputs.Instructions,
+                Rating: formOutputs.Rating,
+                Image: formOutputs.Image[0]
+            }
+
+            postRecipe(recipe, user.sub).then()
         }
         else{
             // Can add some error messaging with react hook form later

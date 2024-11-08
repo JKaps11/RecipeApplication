@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, GridFSBucket } from "mongodb";
 
 const connectionString = process.env.ATLAS_URI || "";
 
@@ -12,6 +12,7 @@ try {
   console.error(e);
 }
 
-let db = conn.db("Recipes");
-
-export default db;
+const recipesDB = conn.db("Recipes");
+const usersDB = conn.db("Users");
+const recipeImageBucket = new GridFSBucket(recipesDB, {bucketName: "recipeImages"})
+export default {recipesDB, usersDB, recipeImageBucket};

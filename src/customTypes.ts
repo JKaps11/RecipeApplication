@@ -11,17 +11,35 @@ export type Ingredient = {
     Amount_Type: Amount_Types;
 }
 
-export type Recipe = {
+export type RecipeServer = {
     Name: string;
+    UserId: string;
     Culinary_Type: string;
     Description: string;
     Rating: number;
     Ingredients: Array<Ingredient>;
     Instructions: Array<string>;
-    Image: FileList;
+    Image: string;
+}
+
+export type Recipe = {
+    Name: string;
+    UserId: string;
+    Culinary_Type: string;
+    Description: string;
+    Rating: number;
+    Ingredients: Array<Ingredient>;
+    Instructions: Array<string>;
+    Image: File;
 }
 
 export type GroceryList = {
   Name: string;
   Groceries: Array<Ingredient>;
+}
+
+export type User = {
+    Name: string;
+    Email: string;
+    Sub: string;
 }
