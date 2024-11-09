@@ -1,13 +1,13 @@
 import React from "react";
 import "../styling/recipecard.css";
-import {Recipe} from "../customTypes";
+import {RecipeServer} from "../customTypes";
 
 interface recipeCardProps{
-    recipe:Recipe;
-    clickMethod:(r:Recipe) => void;
+    recipe:RecipeServer;
+    clickMethod:(r:RecipeServer) => void;
 }
 
-
+ 
 const RecipeCard = ({recipe, clickMethod}:recipeCardProps) => {
 
     return<button id="recipecardbutton" onClick={() => clickMethod(recipe)}>
@@ -18,8 +18,11 @@ const RecipeCard = ({recipe, clickMethod}:recipeCardProps) => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div id={"recipecardnamediv"}>
                 <h2 id="recipecardname">{recipe.Name}</h2>
+            </div>
+            <div id="recipecardimgdiv">
+                <img id="recipecardimg" src={recipe.Image} alt={"No Image"}/>
             </div>
         </div>
     </button>

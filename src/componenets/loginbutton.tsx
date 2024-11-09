@@ -8,8 +8,10 @@ interface LoginPageProps {
 const LoginButton = ({scrollRef}:LoginPageProps)=> {
     const { loginWithRedirect, isAuthenticated } = useAuth0();
 
+    const handleLogin = () => {
+        loginWithRedirect();
+    }
     const scrollToBeginning = () => {
-
         if (scrollRef.current) {
             scrollRef.current.scrollIntoView({
                 behavior: 'smooth',
@@ -21,7 +23,7 @@ const LoginButton = ({scrollRef}:LoginPageProps)=> {
 
 
     return !isAuthenticated ? (
-        <button id="loginbutton" onClick={() => loginWithRedirect()}>
+        <button id="loginbutton" onClick={handleLogin}>
             Login
         </button>
     ) : (

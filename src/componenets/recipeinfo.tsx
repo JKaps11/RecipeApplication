@@ -1,10 +1,10 @@
 import React from "react";
 import "../styling/recipeinfo.css";
-import {Ingredient, Recipe} from "../customTypes";
+import {Ingredient, RecipeServer} from "../customTypes";
 
 
 interface recipeInfoProps{
-    recipe:Recipe | undefined;
+    recipe:RecipeServer | undefined;
 }
 const RecipeInfo = ({recipe}:recipeInfoProps) =>{
 
