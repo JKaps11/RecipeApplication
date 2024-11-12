@@ -25,7 +25,7 @@ export async function postRecipe(recipe: Recipe, id:string): Promise<void> {
                 UserId: id,
                 Culinary_Type: recipe.Culinary_Type,
                 Description: recipe.Description,
-                Rating: recipe.Description,
+                Rating: recipe.Rating,
                 Ingredients: recipe.Ingredients,
                 Instructions: recipe.Instructions,
                 Image: imgBinary

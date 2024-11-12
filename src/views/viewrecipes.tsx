@@ -47,10 +47,11 @@ const ViewRecipes = () => {
         }
     }
 
+
     return showRecipeInfo ? <RecipeInfo recipe={currRecipe}/>
         :<div id="viewRecipesLayout">
             <div id="searchDiv">
-                <form id="recipeSearchForm" onSubmit={handleSubmit((e)=> e.preventDefault)}>
+                <form id="recipeSearchForm" onSubmit={handleSubmit((e :FieldValues)=> {})}>
                     <div id="recipeSearchDiv">
                         <input
                             id="recipeSearchInput"

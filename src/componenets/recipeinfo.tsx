@@ -37,7 +37,9 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
 
         <div id="recipeInfoLayout">
             <div id="rilblock">
-                <div id="ripicture"></div>
+                <div id="ripicture">
+                    <img id={"riimage"} src={recipe?.Image} alt={"recipe Image"}/>
+                </div>
                 <div id="rilbdiv">
                     <h2 id="rititle1">Rating: {recipe?.Rating}/10</h2>
                 </div>
