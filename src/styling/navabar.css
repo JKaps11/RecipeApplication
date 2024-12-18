@@ -48,32 +48,32 @@
 
 #menuIconColor1.morphing {
     transform-origin: center center;
-    transform: rotate(-125deg);
+    transform: rotate(-115deg) translateY(10%) translateX(0);
 }
 
 #menuIconColor2.morphing {
     transform-origin: center center;
-    transform: translateY(-15%);
+    transform: translateY(-35%);
 }
 
 #menuIconColor3.morphing {
     transform-origin: center center;
-    transform: rotate(-55deg);
+    transform: rotate(-65deg) translateY(-10%) translateX(0);
 }
 
-#menuIconColor1.morphing.reverse {
+#menuIconColor1.reverse {
     transform-origin: center center;
-    transform: rotate(125deg) ;
+    transform: rotate(0) ;
 }
 
-#menuIconColor2.morphing.reverse {
+#menuIconColor2.reverse {
     transform-origin: center center;
     transform: translateY(0);
 }
 
-#menuIconColor3.morphing.reverse {
+#menuIconColor3.reverse {
     transform-origin: center center;
-    transform: rotate(55deg);
+    transform: rotate(0);
 }
 
 

@@ -29,7 +29,7 @@ const HomePage = () => {
                     </span>
                     <h2 id="homeTitle" style={{fontSize: "30px"}}>Create Recipes</h2>
                     <p id="homeText">
-                        A Helpful GUI that will guide the user through the stages of creating a recipe.
+                        A helpful GUI that will guide the user through the stages of creating a recipe.
                         Contains information like rating, name, ingredients, instructions, and more!
                     </p>
 
