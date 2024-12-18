@@ -38,10 +38,17 @@ const Navbar = ({showDropDownMenu, clickMenuIcon}:navbarProps) => {
             About
         </button>
 
-        {isAuthenticated && <button id="profpic" style={{backgroundImage: user?.picture}} onClick={() => navigate("/profile")}>
+            {isAuthenticated && (
+                <button
+                    id="profpic"
+                    style={{ backgroundImage: `url(${user?.picture})` }}
+                    onClick={() => navigate("/profile")}
+                >
+                </button>
+            )}
 
-        </button>}
-    </div>
+
+        </div>
     </div>
 }
 
