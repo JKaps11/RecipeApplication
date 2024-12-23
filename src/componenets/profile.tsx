@@ -53,22 +53,23 @@ const Profile = () => {
                         {/*Change nickname and change email and change password*/}
                         <form id={"profileForm"} onSubmit={handleSubmit(submitUpdateUserForm)}>
                             <div id={"rightProfileBlock"}>
-                                <label id={"profileLabel"}>Nick Name: </label>
+                                <label id={"profileLabel"}>Nick Name </label>
                                 <input
                                     id={"profileInput"}
                                     {...register('NickName')}
                                 />
                             </div>
                             <div id={"rightProfileBlock"}>
-                                <label id={"profileLabel"}>Email: </label>
+                                <label id={"profileLabel"}>Email </label>
                                 <input
                                     id={"profileInput"}
                                     {...register('Email')}
                                 />
                             </div>
                             <div id={"rightProfileBlock"}>
-                                <label id={"profileLabel"}>Password: </label>
+                                <label id={"profileLabel"}>Password </label>
                                 <input
+                                    type={"password"}
                                     id={"profileInput"}
                                     {...register('NewPassword')}
                                 />

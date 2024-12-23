@@ -25,13 +25,16 @@
 
 #profileHeader{
     color: var(--main-txt-color);
+    font-size: 2.5rem;
 }
 
 #profileName{
     color: var(--main-txt-color);
+    font-size: 3rem;
 }
 
 #profileEmail{
+    font-size: 1.5rem;
     color: var(--main-txt-color);
 }
 
@@ -44,7 +47,7 @@
     border: 0;
     background-color: var(--main-accent-color);
     text-align: center;
-    font-size: 15px;
+    font-size: 1.5rem;
     color: var(--main-txt-color);
 }
 
@@ -70,9 +73,9 @@
     height: 25%;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background-color: var(--main-accent-color);
     border-radius: 70px;
     border: none;
@@ -90,8 +93,25 @@
 
 #profileInput {
     text-align: center;
+    border-radius: 25px;
+    background-color: var(--main-accent2-color);
+    border: none;
+    color: var(--main-txt-color);
+    width: 75%;
+    height: 40%;
+    font-size: 2.5rem;
 }
 
 #profileLabel {
     color: var(--main-txt-color);
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+#profileInput:focus {
+    outline: none;
+}
+
+#profileInput:hover {
+    opacity: 0.7;
 }
