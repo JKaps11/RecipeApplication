@@ -52,14 +52,15 @@
     background-color: transparent;
     padding-left: 10px;
     padding-right: 30px;
+    border-radius: 25px;
     border: none;
     color: var(--main-txt-color);
-    font-size: 17px;
+    font-size: 1.7rem;
     font-weight: bold;
     cursor: pointer;
 }
 #menuOptionButton:hover{
-    border-right: 10px solid white;
+    opacity: 0.1;
 }
 
 

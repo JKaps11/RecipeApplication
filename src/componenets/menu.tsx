@@ -3,10 +3,13 @@ import {useNavigate} from "react-router-dom";
 import '../styling/menu.css';
 import LogoutButton from "./logoutbutton";
 import {useAuth0} from "@auth0/auth0-react";
+import { CiSettings, CiCircleList } from "react-icons/ci";
+import { BiSolidFoodMenu, BiPencil } from "react-icons/bi";
 
 type MenuOption = {
     name: string;
     path: string;
+    icon: any;
 }
 
 const Menu = () => {
@@ -17,25 +20,29 @@ const Menu = () => {
     const menuOptions: Array<MenuOption> = [
         {
             name:"View Recipes",
-            path:"viewrecipes"
+            path:"viewrecipes",
+            icon: <BiSolidFoodMenu/>
         },
         {
             name:"Create Recipes",
-            path:"createrecipes"
+            path:"createrecipes",
+            icon: <BiPencil/>
         },
         {
             name:"Grocery Lists",
-            path:"grocerylists"
+            path:"grocerylists",
+            icon: <CiCircleList/>
         },
         {
             name:"Settings",
-            path:"settings"
+            path:"settings",
+            icon: <CiSettings />
         }
     ];
 
     const displayMenuOptions = (mos: Array<MenuOption>) :ReactNode =>{
         return mos.map((mo: MenuOption) => {
-            return isAuthenticated ? <button key={mo.name} id="menuOptionButton" onClick={() => navigate(mo.path)}>{mo.name}</button>:
+            return isAuthenticated ? <button key={mo.name} id="menuOptionButton" onClick={() => navigate(mo.path)}>{mo.icon} {mo.name}</button>:
                 <button key={mo.name} id="menuOptionButton" onClick={() => loginWithRedirect()}>{mo.name}</button>;
                     });
     }
@@ -46,7 +53,6 @@ const Menu = () => {
         </div>
         <div id="menuOptions">
             {displayMenuOptions(menuOptions)}
-            <LogoutButton/>
         </div>
     </div>
 }
