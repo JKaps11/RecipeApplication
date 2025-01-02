@@ -20,6 +20,10 @@ const ViewRecipes = () => {
         setCurrRecipe(r);
         setShowRecipeInfo(true);}
 
+    const returnToViewRecipes = () : void => {
+        setShowRecipeInfo(false)
+    }
+
 
     const { register, handleSubmit} = useForm();
     useEffect(() =>{
@@ -47,7 +51,7 @@ const ViewRecipes = () => {
     }
 
 
-    return showRecipeInfo ? <RecipeInfo recipe={currRecipe}/>
+    return showRecipeInfo ? <RecipeInfo recipe={currRecipe} returnFunction={returnToViewRecipes}/>
         :<div id="viewRecipesLayout">
             <div id="searchDiv">
                 <form id="recipeSearchForm" onSubmit={handleSubmit((e :FieldValues)=> {})}>

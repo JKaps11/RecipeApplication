@@ -107,4 +107,17 @@
     color: var(--main-txt-color);
 }
 
-
+#backArrowButton {
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: url("../assets/back_arrow.svg");
+    background-size: cover;
+    background-color: transparent;
+    color: var(--main-accent2-color);
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}

@@ -5,8 +5,9 @@ import {Ingredient, RecipeServer} from "../customTypes";
 
 interface recipeInfoProps{
     recipe:RecipeServer | undefined;
+    returnFunction: () => void;
 }
-const RecipeInfo = ({recipe}:recipeInfoProps) =>{
+const RecipeInfo = ({recipe, returnFunction}:recipeInfoProps) =>{
 
     const displayIngredients = (ingredients:Array<Ingredient>|undefined) =>{
         if(!ingredients || ingredients?.length === 0 ){
@@ -65,6 +66,7 @@ const RecipeInfo = ({recipe}:recipeInfoProps) =>{
                         {displayInstructions(recipe?.Instructions)}
                     </ol>
                 </div>
+                <button id="backArrowButton" onClick={returnFunction}/>
             </div>
         </div>
     </div>
