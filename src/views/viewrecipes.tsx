@@ -39,7 +39,6 @@ const ViewRecipes = () => {
         }
         else{
             return recipeList?.filter((recipe:RecipeServer) => recipe.Name.includes(recipeToSearch)).map((recipe:RecipeServer) => {
-                console.log("Recipe: " + recipe.Image)
                 return(
                     <RecipeCard recipe={recipe} clickMethod={viewRecipeInfo} key={recipe.Name}/>
                 );

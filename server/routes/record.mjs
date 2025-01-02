@@ -7,6 +7,20 @@ const recipeImageBucket = db.recipeImageBucket
 
 const router = express.Router();
 
+
+router.get("/numRecipes", async (req, res) => {
+    try {
+        let num_recipes = await recipeDb.collection("RecipeCollection").countDocuments()
+
+        if (num_recipes) {
+            res.status(200).json(num_recipes)
+        }
+    }
+    catch (err) {
+        console.error("Error while getting number of recipes:", err);
+        res.status(500).send("Failed to get number of recipes");
+    }
+})
 // Adding user info to user table on user registration
 router.post("/createUser", async (req, res) => {
   let newDocument = {

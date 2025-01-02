@@ -80,6 +80,26 @@ export const createUser = async (user: User): Promise<void> => {
         console.error(`Error with posting new user: ${message}`);
     }
 }
+
+export const getNumberofRecipes = async (): Promise<number> => {
+    let num_recipes: number = 0
+    try {
+        let response: Response = await fetch("http://localhost:5000/record/numRecipes", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        if (response.ok) {
+            num_recipes = await response.json()
+        }
+    }
+    catch (error: any) {
+        console.error(`Error with getting number of recipes: ${error.message}`)
+    }
+
+    return num_recipes
+}
 export const getAllRecipes = async (): Promise<Array<RecipeServer>> => {
     let recipeList : Array<RecipeServer> = []
     try {
@@ -92,7 +112,6 @@ export const getAllRecipes = async (): Promise<Array<RecipeServer>> => {
 
         if (response.ok) {
             recipeList = await response.json()
-            console.log("recipe Image server: " + recipeList[0].Image)
         }
     }
     catch(error: any){

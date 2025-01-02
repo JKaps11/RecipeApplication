@@ -1,8 +1,8 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import "../styling/createrecipes.css";
 import CustomDialog from "../componenets/customdialog";
 import {Ingredient, Recipe} from "../customTypes";
-import {postRecipe} from "../recipeAPI";
+import {postRecipe, getNumberofRecipes} from "../recipeAPI";
 import {SubmitHandler, useForm} from "react-hook-form";
 import useFilePreview from "../componenets/useFilePreview";
 import {useAuth0} from "@auth0/auth0-react";
@@ -58,6 +58,17 @@ const StatusBar = ({state}: {state: crState}) =>{
 }
 const CreateRecipes = () => {
     const { user} = useAuth0();
+
+    const [withinRecipeThreshold, setWithinRecipeThreshold] = useState<boolean>(false);
+
+    useEffect(() => {
+        const checkThreshold = async () => {
+            const num_recipes: number = await getNumberofRecipes();
+
+            num_recipes <= 20 ? setWithinRecipeThreshold(true) : setWithinRecipeThreshold(false);
+        };
+        checkThreshold()
+        }, []);
     const ListInput = ({isIngredients}:{isIngredients: boolean}) => {
         const [inputList, setInputList] = useState<Array<{ input: string; amount?: string }>>([
             { input: "" },
@@ -287,35 +298,38 @@ const CreateRecipes = () => {
         }
     }
 
-    return (<>
-            <CustomDialog ref={dialogRef} onContinue={() => handleContinue()} title="Are You Sure?"/>
-            <div id="createRecipesLayout">
-                <div id="createRecipesStatusBar">
-                    <StatusBar state={crFormState}/>
-                </div>
-                <div id="createRecipesFormDiv">
-                    <div id="createRecipesCenterForm">
-                        <form id="createRecipesForm" onSubmit={handleSubmit(submitCreateRecipeForm)}>
-                            <div id="createRecipesFormLayout">
-                                {displayForm()}
-                                {crFormState === 3 && <div id="createRecipesSubmitDiv"><input id="createRecipesButton"
-                                                                  type="submit" /></div>}
-                            </div>
-                        </form>
-                    </div>
-                    <div id="createRecipesButtonDiv">
-                        <div id="createRecipesCenterButtons">
-                            {crFormState !== 0 && <button id="createRecipesButton"
-                                                          onClick={() => setCRFormState(prevState => prevState - 1)}>prev</button>}
-                            {crFormState !== 3 && <button id="createRecipesButton"
-                                                          onClick={() => setCRFormState(prevState => prevState + 1)}>next</button>}
-
+    return ( withinRecipeThreshold ? <>
+        <CustomDialog ref={dialogRef} onContinue={() => handleContinue()} title="Are You Sure?"/>
+        <div id="createRecipesLayout">
+            <div id="createRecipesStatusBar">
+                <StatusBar state={crFormState}/>
+            </div>
+            <div id="createRecipesFormDiv">
+                <div id="createRecipesCenterForm">
+                    <form id="createRecipesForm" onSubmit={handleSubmit(submitCreateRecipeForm)}>
+                        <div id="createRecipesFormLayout">
+                            {displayForm()}
+                            {crFormState === 3 && <div id="createRecipesSubmitDiv"><input id="createRecipesButton"
+                                                                                          type="submit"/></div>}
                         </div>
+                    </form>
+                </div>
+                <div id="createRecipesButtonDiv">
+                    <div id="createRecipesCenterButtons">
+                        {crFormState !== 0 && <button id="createRecipesButton"
+                                                      onClick={() => setCRFormState(prevState => prevState - 1)}>prev</button>}
+                        {crFormState !== 3 && <button id="createRecipesButton"
+                                                      onClick={() => setCRFormState(prevState => prevState + 1)}>next</button>}
+
                     </div>
                 </div>
             </div>
-        </>
-    );
+        </div>
+    </> : <>
+            <h1 id={"createRecipesPageTitle"}>You have exceeded the max amount of recipes.</h1>
+    <h1 id={"createRecipesPageTitle"}>Please delete some and try again!</h1>
+    </>
+        );
 }
 
 export default CreateRecipes;
