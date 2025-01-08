@@ -6,6 +6,7 @@ import {useAuth0} from "@auth0/auth0-react";
 import { CiSettings, CiCircleList } from "react-icons/ci";
 import { BiSolidFoodMenu, BiPencil } from "react-icons/bi";
 
+
 type MenuOption = {
     name: string;
     path: string;
@@ -28,16 +29,18 @@ const Menu = () => {
             path:"createrecipes",
             icon: <BiPencil/>
         },
-        {
+        /*{
             name:"Grocery Lists",
             path:"grocerylists",
             icon: <CiCircleList/>
-        },
+        },*/
+        /*
         {
             name:"Settings",
             path:"settings",
             icon: <CiSettings />
         }
+        */
     ];
 
     const displayMenuOptions = (mos: Array<MenuOption>) :ReactNode =>{

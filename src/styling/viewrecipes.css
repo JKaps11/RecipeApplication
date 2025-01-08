@@ -1,34 +1,100 @@
 #viewRecipesLayout{
     height: 100%;
-    width: 100%;
+    width: 98%;
     display: flex;
     row-gap: 20px;
-    flex-direction: column;
+    flex-direction: row;
+    padding-right: 20px;
 }
 
-#searchDiv{
-    border-radius: 30px;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 15%;
-    width: 90%;
-    border: 5px solid var(--main-accent-color);
-    box-shadow: 0 8px 20px -4px var(--main-accent2-color);
+#filtersDiv{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#filtersLine {
+    width: 100%;
+    border: 1px solid var(--main-txt-color);
+}
+
+#filtersTitle {
+    color: var(--main-txt-color);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+#filtersSection {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: fit-content;
+    margin-bottom: 10%;
+}
+
+#filtersRange {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background: none;
+}
+
+#filtersRange::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: var(--main-txt-color);
+    border-radius: 5px;
+    border: none;
+}
+
+#filtersRange::-webkit-slider-thumb::after {
+    background-color: var(--main-accent-color);
+}
+
+#filtersRange::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none;
+    width: 10px;
+    height: 20px;
+    background-color: var(--main-txt-color);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px; /* Adjust to align with the track */
+}
+
+
+#filtersRange:hover::-webkit-slider-thumb {
+    opacity:0.7;
+}
+
+#filtersRange:active::-webkit-slider-thumb {
+    transform: scale(1.2); /* Make the thumb larger when active */
+}
+
+
+#filtersRange:focus {
+    outline: none;
 }
 
 #recipeSearchForm{
     height: 100%;
-    width: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#filtersHeader {
+    color: var(--main-txt-color);
+    font-size: 1.4rem;
 }
 
 #recipeSearchDiv{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
 }
 
 #recipeSearchInput{
@@ -37,7 +103,6 @@
     border: none;
     box-shadow: 0 8px 8px -4px var(--main-background-color);
     width: 90%;
-    height: 50%;
     font-size: 25px;
     outline: transparent;
     background-color: var(--main-accent-color);
@@ -63,9 +128,27 @@
     margin-right: auto;
     border-radius: 30px;
     height: 85%;
-    width: 90%;
+    width: 85%;
     column-gap: 30px;
     row-gap: 30px;
     border: 5px solid var(--main-accent-color);
     box-shadow: 0 8px 20px -4px var(--main-accent2-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#recipesHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5%;
+    width: 90%;
+}
+
+#recipesHeaderText {
+    color: var(--main-txt-color);
+    font-size: 2rem;
 }

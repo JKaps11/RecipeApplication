@@ -31,9 +31,7 @@ const Navbar = ({showDropDownMenu, clickMenuIcon}:navbarProps) => {
             <button id="navbarButton" onClick={() => navigate("./")}>
                 Home
             </button>
-            <button id="navbarButton" onClick={() => navigate("/features")}>
-            Features
-        </button>
+            {/*<button id="navbarButton" onClick={() => navigate("/features")}>Features</button>*/}
         <button id="navbarButton" onClick={() => navigate("/about")}>
             About
         </button>

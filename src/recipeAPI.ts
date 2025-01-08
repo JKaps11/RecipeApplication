@@ -14,11 +14,11 @@ const convertToBase64 = (file: File) => {
   };
 
 
-export async function postRecipe(recipe: Recipe, id:string): Promise<void> {
+export async function postRecipe(recipe: Recipe, id:string): Promise<boolean> {
     try {
         const imgBinary = await convertToBase64(recipe.Image)
 
-        await fetch("http://localhost:5000/record/recipe", {
+        const response = await fetch("http://localhost:5000/record/recipe", {
             method: "POST",
             body: JSON.stringify({
                 Name: recipe.Name,
@@ -33,11 +33,10 @@ export async function postRecipe(recipe: Recipe, id:string): Promise<void> {
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then(response => {
-            if(!response.ok){
-                console.log(response.status);
-            }
         })
+
+        return response.ok;
+
 
 
     } catch (error) {
@@ -48,6 +47,7 @@ export async function postRecipe(recipe: Recipe, id:string): Promise<void> {
             message = String(error);
         }
         console.error(`Error with Posting Recipe: ${message}`);
+        return false
     }
 }
 

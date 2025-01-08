@@ -32,13 +32,14 @@ const RecipeInfo = ({recipe, returnFunction}:recipeInfoProps) =>{
     };
 
     return <div id="recipeInfoDiv">
-        <div>
+        <div id={"recipeInfoHeader"}>
+            <button id="backArrowButton" onClick={returnFunction}/>
             <h1 id="riname">{recipe?.Name}</h1>
         </div>
 
         <div id="recipeInfoLayout">
             <div id="rilblock">
-                <div id="ripicture">
+            <div id="ripicture">
                     <img id={"riimage"} src={recipe?.Image} alt={"recipe Image"}/>
                 </div>
                 <div id="rilbdiv">
@@ -66,7 +67,6 @@ const RecipeInfo = ({recipe, returnFunction}:recipeInfoProps) =>{
                         {displayInstructions(recipe?.Instructions)}
                     </ol>
                 </div>
-                <button id="backArrowButton" onClick={returnFunction}/>
             </div>
         </div>
     </div>

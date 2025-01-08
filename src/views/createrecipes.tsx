@@ -6,6 +6,7 @@ import {postRecipe, getNumberofRecipes} from "../recipeAPI";
 import {SubmitHandler, useForm} from "react-hook-form";
 import useFilePreview from "../componenets/useFilePreview";
 import {useAuth0} from "@auth0/auth0-react";
+import {useNavigate} from "react-router-dom";
 
 enum crState {
     Information = 0,
@@ -58,6 +59,7 @@ const StatusBar = ({state}: {state: crState}) =>{
 }
 const CreateRecipes = () => {
     const { user} = useAuth0();
+    const [recipeUploadFail, setRecipeUploadFail] = useState<boolean>(false)
 
     const [withinRecipeThreshold, setWithinRecipeThreshold] = useState<boolean>(false);
 
@@ -67,7 +69,7 @@ const CreateRecipes = () => {
 
             num_recipes <= 20 ? setWithinRecipeThreshold(true) : setWithinRecipeThreshold(false);
         };
-        checkThreshold()
+        checkThreshold().then()
         }, []);
     const ListInput = ({isIngredients}:{isIngredients: boolean}) => {
         const [inputList, setInputList] = useState<Array<{ input: string; amount?: string }>>([
@@ -170,6 +172,7 @@ const CreateRecipes = () => {
     const [crFormState, setCRFormState] = useState<crState>(0)
 
     const dialogRef = useRef<HTMLDialogElement | null>(null)
+    const failDialogRef = useRef<HTMLDialogElement| null>(null)
 
     type RecipeForm = {
         Name: string,
@@ -193,8 +196,9 @@ const CreateRecipes = () => {
         dialogRef.current?.showModal();
     }
 
-    const handleContinue = () => {
-        if(user && user.sub){
+    const navigate = useNavigate()
+    const handleContinue = async () => {
+        if (user && user.sub) {
 
             let formOutputs: RecipeForm = getValues()
             let recipe: Recipe = {
@@ -208,13 +212,17 @@ const CreateRecipes = () => {
                 Image: formOutputs.Image[0]
             }
 
-            postRecipe(recipe, user.sub).then()
-        }
-        else{
+            let success: boolean = await postRecipe(recipe, user.sub)
+            success ? navigate("") : failDialogRef.current?.showModal();
+        } else {
             // Can add some error messaging with react hook form later
             console.log("you need to log in first");
         }
         dialogRef.current?.close()
+
+    }
+    const handleFailContinue = () => {
+        failDialogRef.current?.close()
     }
 
     const displayForm = () => {
@@ -299,6 +307,7 @@ const CreateRecipes = () => {
     }
 
     return ( withinRecipeThreshold ? <>
+        <CustomDialog ref={failDialogRef} onContinue={() => handleFailContinue()} title={"Upload Failed"}/>
         <CustomDialog ref={dialogRef} onContinue={() => handleContinue()} title="Are You Sure?"/>
         <div id="createRecipesLayout">
             <div id="createRecipesStatusBar">
@@ -309,8 +318,12 @@ const CreateRecipes = () => {
                     <form id="createRecipesForm" onSubmit={handleSubmit(submitCreateRecipeForm)}>
                         <div id="createRecipesFormLayout">
                             {displayForm()}
-                            {crFormState === 3 && <div id="createRecipesSubmitDiv"><input id="createRecipesButton"
-                                                                                          type="submit"/></div>}
+                            {crFormState === 3 && <div id="createRecipesSubmitDiv">
+                                <input id="createRecipesButton"
+                                       type="submit"/>
+
+                            </div>
+                            }
                         </div>
                     </form>
                 </div>

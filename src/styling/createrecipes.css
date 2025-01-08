@@ -158,7 +158,7 @@
     padding:0 10px;
     margin: 0 0;
     font-size: 15px;
-    height: 50%;
+    height: 30px;
     width: 80%;
     border: none;
     background-color: var(--main-accent-color);
@@ -181,12 +181,14 @@
 }
 
 #createRecipesRangeInput::-webkit-slider-runnable-track{
-    height: 50%;
+    height: 1rem;
     border-radius: 20px;
     background: var(--main-accent-color);
 }
 
 #createRecipesRangeInput::-moz-range-track{
+    height: 2rem;
+    border-radius: 20px;
     background: var(--main-accent-color);
 }
 
@@ -194,8 +196,8 @@
     -webkit-appearance: none;
     appearance: none;
     border-radius: 20px;
-    margin-top: -7px;
-    height: 1.5rem;
+    margin-top: -0.5rem;
+    height: 2rem;
     width: 0.5rem;
     background-color: var(--main-txt-color);
 }
@@ -217,7 +219,7 @@
 
 #createRecipesRangeInput{
     height: 15%;
-    margin: 0;
+    margin-top: 10px;
     padding: 0;
     width: 80%;
     -webkit-appearance: none;
@@ -233,8 +235,8 @@
     font-size: 20px;
     margin: 0 0;
     resize: none;
-    max-height: 80%;
-    height: 80%;
+    min-height: 80%;
+    height: 200px;
     width: 80%;
     border: none;
     background-color: var(--main-accent-color);

@@ -47,6 +47,7 @@ const HomePage = () => {
                     </p>
 
                 </div>
+                {/*
                 <div id="panel2Div">
                     <span id="whiteCircle">
                         <img src={require("../assets/groceryList.png")} id="panel2Image" alt="groceryList"/>
@@ -55,9 +56,11 @@ const HomePage = () => {
                     <p id="homeText">
                         Add the recipes that you want to buy ingredients for and the grocery list will automatically
                         calculate the amount
-                        of an ingredient you need accross all the recipes you input!
+                        of an ingredient you need across all the recipes you input!
                     </p>
                 </div>
+                */
+                }
             </div>
             <div id="panel1">
                 <div style={{width:"70%"}} id="panelPictureDiv">
@@ -66,7 +69,7 @@ const HomePage = () => {
                 <div id="panelTitleDiv">
                     <h2 id="homeTitleTwo">Let's get Cooking!</h2>
                     <p id="homeText">
-                        Get Started by pressing the three bars in the top left of your screen and selecting an option
+                        Get started by pressing the three bars in the top left of your screen and selecting an option
                         from the Editor Menu. For more information, check out the features and about page in the top
                         right of the screen.
                     </p>

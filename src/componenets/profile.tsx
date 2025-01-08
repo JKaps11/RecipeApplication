@@ -48,6 +48,7 @@ const Profile = () => {
                         {user?.picture && <img src={user.picture} alt={user?.name} />}
                         <h2 id={"profileName"}>{user?.nickname}</h2>
                         <h4 id={"profileEmail"}>{user?.name}</h4>
+                        <h1 style={{color:"red"}}>*You can't change anything because this is a test account*</h1>
                     </div>
                     <div id={"rightProfileLayout"}>
                         {/*Change nickname and change email and change password*/}
