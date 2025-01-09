@@ -6,6 +6,7 @@ import "../styling/viewrecipes.css";
 import {Recipe, RecipeServer} from "../customTypes";
 import { useAuth0 } from "@auth0/auth0-react";
 import { getAllRecipes } from "../recipeAPI";
+import {FaSort} from "react-icons/fa";
 
 const ViewRecipes = () => {
 
@@ -58,6 +59,36 @@ const ViewRecipes = () => {
         setCurrNumRecipes(filtered.length);
     };
 
+    const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        console.log("handling change")
+        type sortOption = "rating" | "alphabetical"
+        const selectedValue = event.target.value as sortOption;
+
+        let compareFn: (recipe1:RecipeServer, recipe2:RecipeServer) => number
+
+        console.log(`selectedValue: ${selectedValue}`)
+        if(selectedValue === "rating") {
+            compareFn = (recipe1: RecipeServer, recipe2: RecipeServer): number => {
+                const rating1: number = Number(recipe1.Rating)
+                const rating2: number = Number(recipe2.Rating)
+                if (rating1 > rating2) {
+                    return -1
+                } else if (rating1 < rating2) {
+                    return 1
+                }
+                return 0
+            }
+        }
+        else{
+            compareFn = (recipe1: RecipeServer, recipe2: RecipeServer): number => {
+               return recipe1.Name.localeCompare(recipe2.Name)
+            }
+        }
+
+        console.log(filteredRecipes)
+        setFilteredRecipes((prevState: RecipeServer[]) => [...prevState].sort(compareFn))
+        console.log(filteredRecipes)
+    }
     const displayRecipes = (): React.JSX.Element | React.JSX.Element[] => {
         return !filteredRecipes || filteredRecipes.length === 0 ? (
             <h2 style={{ minWidth: "600px", color: "white" }}>
@@ -121,7 +152,11 @@ const ViewRecipes = () => {
                     <h2 id={"recipesHeaderText"}>
                         {currNumRecipes} {currNumRecipes === 1 ? "recipe" : "recipes"}
                     </h2>
-                    <button>Sort</button>
+                    <select id={"viewRecipesSort"} onChange={handleSortChange}>
+                        <option value={""} disabled selected hidden>Sort by</option>
+                        <option value={"alphabetical"}>Alphabetically</option>
+                        <option value={"rating"}>Rating</option>
+                    </select>
                 </div>
                 <div id="recipesLayout">{displayRecipes()}</div>
             </div>

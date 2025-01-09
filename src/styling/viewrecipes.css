@@ -121,8 +121,9 @@
     width: 95%;
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: min-content min-content min-content;
+    grid-template-columns: repeat(6, min-content);
 }
+
 #recipesDiv{
     margin-left: auto;
     margin-right: auto;

@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import "../styling/createrecipes.css";
 import CustomDialog from "../componenets/customdialog";
 import {Ingredient, Recipe} from "../customTypes";
-import {postRecipe, getNumberofRecipes} from "../recipeAPI";
+import {postRecipe, getNumberofRecipes } from "../recipeAPI";
 import {SubmitHandler, useForm} from "react-hook-form";
 import useFilePreview from "../componenets/useFilePreview";
 import {useAuth0} from "@auth0/auth0-react";
@@ -78,8 +78,9 @@ const CreateRecipes = () => {
 
         const addInputField = (e: React.MouseEvent<HTMLButtonElement>) => {
             e.preventDefault();
-            if (inputList.length === 15) {
-                alert("max amount of ingredients reached");
+            if (inputList.length === 30) {
+                const alertMessage: string = `max amount of ${isIngredients ? "ingredients" : "instructions"} reached`
+                alert(alertMessage);
             } else {
                 setInputList((prevInputList) => [...prevInputList, { input: "" }]);
             }
@@ -213,7 +214,7 @@ const CreateRecipes = () => {
             }
 
             let success: boolean = await postRecipe(recipe, user.sub)
-            success ? navigate("") : failDialogRef.current?.showModal();
+            success ? navigate("/") : failDialogRef.current?.showModal();
         } else {
             // Can add some error messaging with react hook form later
             console.log("you need to log in first");

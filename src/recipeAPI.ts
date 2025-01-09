@@ -38,7 +38,6 @@ export async function postRecipe(recipe: Recipe, id:string): Promise<boolean> {
         return response.ok;
 
 
-
     } catch (error) {
         let message;
         if (error instanceof Error) {
