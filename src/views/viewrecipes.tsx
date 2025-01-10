@@ -115,24 +115,27 @@ const ViewRecipes = () => {
                     onSubmit={handleSubmit(submitFilterForm)}
                 >
                     <h2 id={"filtersTitle"}>Filters</h2>
-                    <hr id={"filtersLine"} />
+                    <hr id={"filtersLine"}/>
                     <div id={"filtersSection"}>
                         <h3 id={"filtersHeader"}>Name</h3>
                         <input
-                            {...register("Name", { required: false, maxLength: 20, pattern: /^[A-Za-z]+$/i })}
+                            {...register("Name", {required: false, maxLength: 20, pattern: /^[A-Za-z]+$/i})}
+                            id={"filtersInputText"}
                             type="text"
                             placeholder="Enter a Name"
                         />
                     </div>
+                    <hr id={"filtersLine"}/>
                     <div id={"filtersSection"}>
                         <h3 id={"filtersHeader"}>Culinary Type</h3>
                         <input
-                            {...register("Culinary_Type", { required: false, maxLength: 20, pattern: /^[A-Za-z]+$/i })}
+                            {...register("Culinary_Type", {required: false, maxLength: 20, pattern: /^[A-Za-z]+$/i})}
+                            id={"filtersInputText"}
                             type="text"
                             placeholder="Enter a type"
                         />
                     </div>
-                    <hr id={"filtersLine"} />
+                    <hr id={"filtersLine"}/>
                     <div id={"filtersSection"}>
                         <h3 id={"filtersHeader"}>Minimum Rating {watch("MinRating")}</h3>
                         <input
@@ -141,10 +144,10 @@ const ViewRecipes = () => {
                             min="0"
                             max="10"
                             step="1"
-                            {...register("MinRating", { required: false, min: 0, max: 10 })}
+                            {...register("MinRating", {required: false, min: 0, max: 10})}
                         />
                     </div>
-                    <button type="submit">Apply Filters</button>
+                    <button type="submit" id={"filtersSubmitButton"}>Filter</button>
                 </form>
             </div>
             <div id="recipesDiv">
@@ -153,9 +156,9 @@ const ViewRecipes = () => {
                         {currNumRecipes} {currNumRecipes === 1 ? "recipe" : "recipes"}
                     </h2>
                     <select id={"viewRecipesSort"} onChange={handleSortChange}>
-                        <option value={""} disabled selected hidden>Sort by</option>
-                        <option value={"alphabetical"}>Alphabetically</option>
-                        <option value={"rating"}>Rating</option>
+                        <option id={"viewRecipesOption"} value={""} disabled selected hidden>Sort by</option>
+                        <option id={"viewRecipesOption"} value={"alphabetical"}>Alphabetically</option>
+                        <option id={"viewRecipesOption"} value={"rating"}>Rating</option>
                     </select>
                 </div>
                 <div id="recipesLayout">{displayRecipes()}</div>

@@ -93,31 +93,43 @@
     font-size: 1.4rem;
 }
 
-#recipeSearchDiv{
-
-}
-
-#recipeSearchInput{
-    text-align: center;
-    border-radius: 25px;
-    border: none;
-    box-shadow: 0 8px 8px -4px var(--main-background-color);
-    width: 90%;
-    font-size: 25px;
-    outline: transparent;
+#filtersSubmitButton {
+    color: var(--main-txt-color);
     background-color: var(--main-accent-color);
-    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 10rem;
+    height: 3rem;
 }
 
-#recipeSearchInput:hover{
+#filtersSubmitButton:hover {
     opacity: 0.7;
+}
+
+#filtersSubmitButton:active {
+    opacity:0.8;
+}
+
+#filtersInputText {
+    outline: none;
+    padding: 1rem;
+    border: 1px solid var(--main-txt-color);
+    background-color: transparent;
+    color: var(--main-txt-color);
+}
+
+#filtersInputText::placeholder {
+    color: var(--main-txt-color);
+}
+#filtersInputText:focus {
+    outline: none;
 }
 
 #recipesLayout{
     padding-top: 2%;
     padding-bottom: 2%;
     margin: auto;
-    height: 100%;
+    height: 93%;
     width: 95%;
     display: grid;
     grid-gap: 20px;
@@ -145,11 +157,28 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 5%;
+    height: 7%;
     width: 90%;
 }
 
 #recipesHeaderText {
     color: var(--main-txt-color);
     font-size: 2rem;
+}
+
+#viewRecipesSort {
+    height: 4rem;
+    width: 12rem;
+    border: none;
+    border-radius: 20px;
+    color: var(--main-txt-color);
+    background-color: var(--main-accent-color);
+}
+
+#viewRecipesSort:focus {
+    outline: none;
+}
+
+#viewRecipesOption {
+    color: var(--main-txt-color);
 }
